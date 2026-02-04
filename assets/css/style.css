@@ -1,0 +1,25 @@
+/* Importing Fonts as seen in Figma */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@500&display=swap');
+
+:root {
+    --springwala-red: #BE2229;
+    --springwala-purple: #7A3185;
+}
+
+/* Custom transitions for the mobile menu */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu.hidden-menu {
+    transform: translateX(-100%);
+}
+
+#mobile-menu.show-menu {
+    transform: translateX(0);
+}
+
+/* Scroll lock when menu is open */
+.overflow-hidden {
+    overflow: hidden;
+}
