@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Springwala | Your Industrial Store</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white text-gray-900 font-['Roboto']">
+
+    <div class="bg-[#BE2229] h-[24px] flex items-center justify-center">
+        <span class="text-white text-[13px]">Get discount on every selected product</span>
+    </div>
+
+    <header class="bg-[#F4F6F6] md:bg-white border-b border-[#E8E8E8] relative z-40">
+        
+        <div class="flex md:hidden items-center justify-between px-[19px] py-[8px] bg-white">
+            <button id="menu-btn" class="w-[35px] h-[35px] flex items-center justify-center">
+                <svg class="w-8 h-8 text-[#525252]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <img src="assets/images/header.png" alt="Springwala Logo" class="h-[33px] w-auto">
+            <div class="relative">
+                <svg class="w-8 h-8 text-[#525252]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="md:hidden px-[14px] py-[5px] bg-[#BE2229] flex items-center gap-3">
+    <div class="bg-white rounded-[6px] flex-1 flex items-center px-[11px] h-[30px]">
+        <svg class="w-4 h-4 text-[#797979]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" placeholder="Search..." class="ml-2 outline-none text-[14px] w-full">
+    </div>
+
+    <div class="cursor-pointer flex-shrink-0">
+        <img src="assets/icons/profile.svg" alt="Account" class="w-[26px] h-[26px]">
+    </div>
+</div>
+
+        <div class="hidden md:flex max-w-[1440px] mx-auto items-center justify-between px-[80px] h-[73px]">
+            <img src="assets/images/header.png" alt="Springwala Logo" class="h-[40px] w-auto">
+
+            <div class="flex items-start gap-2 ml-8">
+                <svg class="w-4 h-4 mt-1 text-[#747474]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path>
+                </svg>
+                <div class="flex flex-col">
+                    <span class="text-[#747474] text-[10px]">Location</span>
+                    <span class="text-[#242323] text-[12px] font-medium">Thane, Maharashtra</span>
+                </div>
+            </div>
+
+            <div class="flex-1 max-w-[519px] mx-10 flex h-[40px]">
+                <div class="border border-[#BE2229] rounded-l-[6px] px-3 flex items-center gap-2 cursor-pointer bg-white">
+                    <span class="text-[#BE2229] text-[13px]">All Categories</span>
+                    <svg class="w-3 h-3 text-[#BE2229]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path>
+                    </svg>
+                </div>
+                <div class="flex-1 border border-[#D7D9D9] border-l-0 rounded-r-[6px] flex items-center px-3 bg-white">
+                    <input type="text" class="flex-1 outline-none text-[13px]" placeholder="Search Products...">
+                    <svg class="w-5 h-5 text-[#797979]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-7">
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <svg class="w-6 h-6 text-[#525252]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                    <span class="text-[#525252] text-[15px]">Your Account</span>
+                </div>
+                <div class="relative cursor-pointer">
+                    <svg class="w-6 h-6 text-[#525252]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <span class="absolute -top-2 -right-2 bg-[#BE2229] text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center">12</span>
+                </div>
+                <svg class="w-6 h-6 text-[#525252] cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="hidden md:flex max-w-[1440px] mx-auto items-center h-[56px] px-[80px]">
+            <div class="border border-[#BE2229] rounded-[5px] px-4 py-1.5 flex items-center gap-2 cursor-pointer hover:bg-red-50 transition">
+                <svg class="w-4 h-4 text-[#BE2229]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <span class="text-[#BE2229] text-[12px] font-medium uppercase">Browse All Categories</span>
+            </div>
+            
+            <ul class="flex items-center gap-8 ml-10 text-[15px] text-[#525252]">
+                <li class="text-[#BE2229] font-medium border-b-2 border-[#BE2229] h-[56px] flex items-center cursor-pointer">Home</li>
+                <li class="cursor-pointer hover:text-[#BE2229]">All Products</li>
+                <li class="cursor-pointer hover:text-[#BE2229]">Orders</li>
+                <li class="cursor-pointer hover:text-[#BE2229]">Knowledge Centre</li>
+                <li class="cursor-pointer hover:text-[#BE2229]">Contact Us</li>
+            </ul>
+
+            <div class="ml-auto bg-[#7A3185] text-white flex items-center px-6 py-2 rounded-l-lg h-[42px] cursor-pointer">
+                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.02c-.37-1.12-.57-2.32-.57-3.57 0-.55-.45-1-1-1H3.5c-.55 0-1 .45-1 1C2.5 12.06 11.94 21.5 23.5 21.5c.55 0 1-.45 1-1V16.5c0-.55-.45-1-1-1z"></path>
+                </svg>
+                <div class="flex flex-col leading-tight">
+                    <span class="text-[10px]">Customer Support</span>
+                    <span class="text-[12px] font-bold">+91 8879 241085</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-[280px] bg-white shadow-2xl z-50 hidden-menu md:hidden">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <img src="assets/images/header.png" alt="Logo" class="h-8">
+                <button id="close-menu" class="text-gray-500 text-2xl">&times;</button>
+            </div>
+            <ul class="space-y-6 text-[#525252] font-['Poppins'] text-lg">
+                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-[#BE2229] rounded-full"></span> All Products</li>
+                <li class="flex items-center gap-3">Your Orders</li>
+                <li class="flex items-center gap-3">Your Wishlist</li>
+                <li class="flex items-center gap-3">Your Account</li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Springwala Footer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<section class="springwala-hero">
+    
+    <div class="hero-desktop-wrapper">
+        <div class="hero-container">
+            
+            <div class="hero-box main-banner">
+                <a href="#">
+                    <img src="/assets/images/banner1.png" alt="ISO Standard Die Springs">
+                </a>
+            </div>
+
+            <div class="hero-right-col">
+                <div class="hero-box small-banner">
+                    <a href="#">
+                        <img src="/assets/images/bannerb1.png" alt="Industrial Components">
+                    </a>
+                </div>
+                <div class="hero-box small-banner">
+                    <a href="#">
+                        <img src="/assets/images/bannerb2.png" alt="Precision Circlips">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hero-mobile-wrapper">
+        <div class="mobile-banner-box">
+            <a href="#">
+                <img src="/assets/images/mobile1.png" alt="Springwala Mobile Offer">
+            </a>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<section class="eng-categories-section">
+    <div class="ec-container">
+        
+        <div class="ec-header">
+            <h2 class="ec-title">Engineered Categories for Industrial Buyers</h2>
+            <a href="#" class="ec-view-all desktop-link">View All Categories &rarr;</a>
+        </div>
+
+        <div class="ec-content-wrapper">
+            
+            <div class="ec-poster">
+                <img src="/assets/images/deafult image.png" alt="Industrial Components Poster">
+            </div>
+
+            <div class="ec-grid">
+                
+                <div class="ec-card">
+                    <div class="ec-img-box">
+                        <img src="/assets/images/deafult image.png" alt="Springs">
+                    </div>
+                    <p class="ec-name">Springs</p>
+                </div>
+
+                <div class="ec-card">
+                    <div class="ec-img-box">
+                        <img src="/assets/images/deafult image.png" alt="Fasteners">
+                    </div>
+                    <p class="ec-name">Fasteners</p>
+                </div>
+
+                <div class="ec-card">
+                    <div class="ec-img-box">
+                        <img src="/assets/images/deafult image.png" alt="Springs">
+                    </div>
+                    <p class="ec-name">Springs</p>
+                </div>
+
+                <div class="ec-card">
+                    <div class="ec-img-box">
+                        <img src="/assets/images/deafult image.png" alt="Circlips">
+                    </div>
+                    <p class="ec-name">Circlips</p>
+                </div>
+
+                <div class="ec-card">
+                    <div class="ec-img-box">
+                        <img src="/assets/images/deafult image.png" alt="Parallel Keys">
+                    </div>
+                    <p class="ec-name">Parallel Keys</p>
+                </div>
+
+                <div class="ec-card">
+                    <div class="ec-img-box">
+                        <img src="/assets/images/deafult image.png" alt="Circlips">
+                    </div>
+                    <p class="ec-name">Circlips</p>
+                </div>
+
+                <div class="ec-card">
+                    <div class="ec-img-box">
+                        <img src="/assets/images/deafult image.png" alt="Parallel Keys">
+                    </div>
+                    <p class="ec-name">Parallel Keys</p>
+                </div>
+
+                <div class="ec-card">
+                    <div class="ec-img-box">
+                        <img src="/assets/images/deafult image.png" alt="Fasteners">
+                    </div>
+                    <p class="ec-name">Fasteners</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ec-footer">
+            
+            <div class="ec-pagination">
+                <button class="ec-page-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <span class="ec-page-info">1–8 of 16</span> 
+                <button class="ec-page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <a href="#" class="ec-view-all mobile-link">View All Categories &rarr;</a>
+        </div>
+
+    </div>
+</section>
+
+
+ <!-- Featured Products -->
+<section class="featured-offers-section">
+    <div class="fo-container">
+        
+        <div class="fo-header-wrapper">
+            <div class="fo-header">
+                <h2 class="fo-title">Featured Offers</h2>
+                
+                <div class="fo-pagination">
+                    <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                    <span class="fo-page-count">1–7 of 24</span>
+                    <button class="fo-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="fo-divider"></div>
+        </div>
+
+        <div class="fo-grid">
+            
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+ <!-- Recently Added -->   
+<!-- Featured Products -->
+<section class="featured-offers-section">
+    <div class="fo-container">
+        
+        <div class="fo-header-wrapper">
+            <div class="fo-header">
+                <h2 class="fo-title">Featured Offers</h2>
+                
+                <div class="fo-pagination">
+                    <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                    <span class="fo-page-count">1–7 of 24</span>
+                    <button class="fo-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="fo-divider"></div>
+        </div>
+
+        <div class="fo-grid">
+            
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="fo-card">
+                <span class="fo-badge">Save 20%</span>
+                <div class="fo-image-box">
+                    <img src="/assets/images/deafult image.png" alt="Die Spring Red">
+                    <button class="fo-wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="fo-details">
+                    <h3 class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</h3>
+                    <div class="fo-pricing">
+                        <span class="fo-price">₹311.52</span>
+                        <span class="fo-old-price">₹400.90</span>
+                    </div>
+                    <button class="fo-cart-btn">
+                        Add to Cart <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!--Knowledge Section-->
+
+<section class="knowledge-section">
+    <div class="ks-container">
+        
+        <div class="ks-header">
+            <h2 class="ks-title">Knowledge Section</h2>
+            <a href="#" class="ks-view-all desktop-only">View All Categories &rarr;</a>
+        </div>
+
+        <div class="ks-divider"></div>
+
+        <div class="ks-grid">
+            
+            <div class="ks-card">
+                <div class="ks-img-box">
+                    <img src="/assets/images/Knowledge1.png" alt="Springs Description">
+                </div>
+                <h3 class="ks-post-title">Beautiful Title</h3>
+                <p class="ks-post-desc">Beautiful Die Springs Description is written here...</p>
+                <span class="ks-date">10th February 2026</span>
+            </div>
+
+            <div class="ks-card">
+                <div class="ks-img-box">
+                    <img src="/assets/images/Knowledge1.png" alt="Springs Description">
+                </div>
+                <h3 class="ks-post-title">Beautiful Title</h3>
+                <p class="ks-post-desc">Beautiful Die Springs Description is written here...</p>
+                <span class="ks-date">10th February 2026</span>
+            </div>
+
+            <div class="ks-card">
+                <div class="ks-img-box">
+                    <img src="/assets/images/Knowledge1.png" alt="Springs Description">
+                </div>
+                <h3 class="ks-post-title">Beautiful Title</h3>
+                <p class="ks-post-desc">Beautiful Die Springs Description is written here...</p>
+                <span class="ks-date">10th February 2026</span>
+            </div>
+
+            <div class="ks-card">
+                <div class="ks-img-box">
+                    <img src="/assets/images/Knowledge1.png" alt="Springs Description">
+                </div>
+                <h3 class="ks-post-title">Beautiful Title</h3>
+                <p class="ks-post-desc">Beautiful Die Springs Description is written here...</p>
+                <span class="ks-date">10th February 2026</span>
+            </div>
+
+        </div>
+
+        <div class="ks-divider"></div>
+
+        <div class="ks-footer">
+            
+            <div class="ks-pagination desktop-only">
+                <button class="ks-page-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <span class="ks-page-info">1–6 of 24</span>
+                <button class="ks-page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <a href="#" class="ks-mobile-btn mobile-only">View All Posts &rarr;</a>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+ <!-- Footer -->   
+    <footer class="springwala-footer">
+        <div class="footer-container">
+            
+            <div class="footer-top">
+                
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <img src="/assets/images/header.png" alt="Springwala Logo">
+                    </div>
+                    <div class="divider-line mobile-only"></div>
+                    
+                    <div class="contact-info">
+                        <p class="address">Mumbai, Maharashtra (India)</p>
+                        <p class="phone">Phone: +91 8879 241085</p>
+                        <p class="email">Email: support@springwala.in</p>
+                    </div>
+                    
+                    <div class="divider-line desktop-only contact-divider"></div>
+                </div>
+
+                <div class="footer-links-wrapper">
+                    <div class="link-group">
+                        <a href="#">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Delivery & Shipping</a>
+                    </div>
+
+                    <div class="link-group">
+                        <a href="#">My Account</a>
+                        <a href="#">My Orders</a>
+                        <a href="#">My Cart</a>
+                        <a href="#">Saved Items</a>
+                    </div>
+
+                    <div class="link-group">
+                        <a href="#">Knowledge Section</a>
+                        <a href="#">Sell on Springwala</a>
+                        <a href="#">Career</a>
+                    </div>
+                </div>
+
+                <div class="footer-col newsletter-col">
+                    <div class="divider-line mobile-only"></div>
+                    
+                    <h3 class="newsletter-title">Join Our Newsletter Now</h3>
+                    <p class="newsletter-desc">Get E-mail updates about latest shop and special offers</p>
+                    
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email here..." required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    
+                    <div class="divider-line mobile-only"></div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="desktop-divider"></div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Return Policy</a>
+                    <a href="#">Vendor Agreement</a>
+                    <a href="#">GST Compliance</a>
+                    <a href="#">Data Protection</a>
+                </div>
+                <p class="copyright">Copyright © 2026 All rights reserved</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
