@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Springwala | Die Spring OD 10mm</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Gotham:wght@350;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F4F6F6;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-gotham {
+            font-family: 'Gotham', sans-serif;
+        }
+
+        /* Hide scrollbar for batch selector */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F4F6F6] text-[#1E1E1E]">
+
+    <!-- Header (Same as Index) -->
+    <header class="bg-[#F4F6F6] md:bg-white border-b border-[#E8E8E8] relative z-40">
+        <!-- Mobile Header -->
+        <div class="flex md:hidden relative w-full h-[51px] bg-white border-b border-[#E8E8E8]">
+            <a href="index.html"
+                class="absolute left-[17px] top-[11px] w-[29px] h-[29px] flex items-center justify-center">
+                <img src="assets/icons/mobile/back.svg" alt="Back" class="w-full h-full object-contain"
+                    onerror="this.src='assets/icons/mobile/hamburger.svg'"> <!-- Fallback if back icon missing -->
+            </a>
+            <img src="assets/images/header.png" alt="Springwala Logo"
+                class="absolute left-1/2 -translate-x-1/2 top-[9px] w-[141px] h-[33px]">
+            <div class="absolute right-[16px] top-[11px] w-[29px] h-[29px] flex items-center justify-center">
+                <img src="assets/icons/mobile/cart.svg" alt="Cart" class="w-full h-full object-contain">
+            </div>
+        </div>
+
+        <!-- Mobile Sub-Header (Categories/Deliver to) -->
+        <div class="md:hidden flex justify-between items-center px-4 py-2 bg-[#F6D6D6] h-[30px]">
+            <div class="text-[#BD2830] text-[15px]">Shop by Categories</div>
+            <div class="flex items-center gap-1">
+                <span class="text-[#BD2830] text-[15px]">Deliver to</span>
+                <span class="text-[#BD2830] text-[14px] underline">Thane, Maharashtra</span>
+            </div>
+        </div>
+
+        <!-- Desktop Header -->
+        <div class="hidden md:flex max-w-[1440px] mx-auto items-center justify-between px-[80px] h-[73px]">
+            <a href="index.html"><img src="assets/images/header.png" alt="Springwala Logo" class="h-[40px] w-auto"></a>
+
+            <div class="flex-1 max-w-[519px] mx-10 flex h-[40px]">
+                <div
+                    class="border border-[#BE2229] rounded-l-[6px] px-3 flex items-center gap-2 cursor-pointer bg-white">
+                    <span class="text-[#BE2229] text-[13px]">All Categories</span>
+                </div>
+                <div class="flex-1 border border-[#D7D9D9] border-l-0 rounded-r-[6px] flex items-center px-3 bg-white">
+                    <input type="text" class="flex-1 outline-none text-[13px]" placeholder="Search Products...">
+                    <img src="assets/icons/desktop/search.svg" alt="Search" class="w-5 h-5">
+                </div>
+            </div>
+
+            <div class="flex items-center gap-7">
+                <a href="profile.html" class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
+                    <img src="assets/icons/desktop/profile.svg" alt="Account" class="w-6 h-6">
+                    <span class="text-[#525252] text-[15px]">Your Account</span>
+                </a>
+                <div class="relative cursor-pointer">
+                    <img src="assets/icons/desktop/cart.svg" alt="Cart" class="w-6 h-6">
+                    <span
+                        class="absolute -top-2 -right-2 bg-[#BE2229] text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center">12</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-[1440px] mx-auto md:px-[80px] pb-[120px] md:pb-20">
+
+        <!-- Breadcrumb (Mobile/Desktop) -->
+        <div class="px-4 py-3 text-[14px] text-[#5C5C5C] overflow-x-auto whitespace-nowrap md:px-0">
+            All Categories &gt; Die and Mould Springs &gt; <span class="text-black">Die Spring OD 10 mm L 25 mm Red
+                (R)</span>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 mt-4">
+
+            <!-- Left: Product Image Section -->
+            <div class="bg-white p-4 md:p-8 rounded-[10px] md:w-1/2 flex flex-col items-center relative">
+                <!-- Recently Added Tag -->
+                <div
+                    class="absolute left-0 top-6 bg-[#E9783B] text-white text-[12px] font-medium px-4 py-1 rounded-r-full">
+                    Recently Added
+                </div>
+                <!-- Share Icon -->
+                <div
+                    class="absolute right-4 top-6 w-8 h-8 md:w-10 md:h-10 border border-[#E6E6E6] rounded flex items-center justify-center cursor-pointer hover:bg-gray-50">
+                    <img src="assets/icons/mobile/share.svg" alt="Share" class="w-5 h-5"
+                        onerror="this.src='assets/icons/mobile/orders.svg'"> <!-- Placeholder -->
+                </div>
+
+                <!-- Main Image -->
+                <div class="w-[270px] h-[270px] md:w-[400px] md:h-[400px] flex items-center justify-center my-8">
+                    <img src="assets/images/image.png" alt="Die Spring" class="max-w-full max-h-full object-contain">
+                </div>
+
+                <!-- Carousel Dots -->
+                <div class="flex gap-2 mb-4">
+                    <div class="w-6 h-1 bg-[#625656] rounded-full"></div>
+                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full"></div>
+                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full"></div>
+                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Right: Product Details Section -->
+            <div class="md:w-1/2 flex flex-col">
+
+                <!-- Brand & Title -->
+                <div class="px-4 md:px-0">
+                    <p class="text-[#BE2229] text-[14px]">by Springwala Composites</p>
+                    <h1 class="text-[20px] md:text-[28px] font-bold font-poppins mt-1 mb-2">Die Spring OD 10 mm L 25 mm
+                        Red (R)</h1>
+                    <p class="text-[#5C5C5C] text-[15px] leading-tight mb-6">
+                        Rectangular Wire Die Spring as per ISO 10243, Dia 10 Length 44, Red (R) Heavy Duty Load for
+                        precision dies and mould tools...
+                    </p>
+                </div>
+
+                <!-- Batch Selector -->
+                <div class="px-4 md:px-0 mb-6">
+                    <h3 class="text-[18px] text-[#242323] mb-3">Choose Batch:</h3>
+                    <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+                        <button class="bg-[#D9D9D9] px-4 py-1 rounded-[6px] whitespace-nowrap text-[16px]">Pack of
+                            6</button>
+                        <button
+                            class="bg-white border border-[#D9D9D9] px-4 py-1 rounded-[6px] whitespace-nowrap text-[16px]">Pack
+                            of 8</button>
+                        <button
+                            class="bg-white border border-[#D9D9D9] px-4 py-1 rounded-[6px] whitespace-nowrap text-[16px]">Pack
+                            of 10</button>
+                        <button
+                            class="bg-white border border-[#D9D9D9] px-4 py-1 rounded-[6px] whitespace-nowrap text-[16px]">Pack
+                            of 12</button>
+                    </div>
+                </div>
+
+                <!-- Desktop Price & Cart (Hidden on Mobile, shown here for Desktop layout) -->
+                <div class="hidden md:flex flex-col gap-4 mb-6 p-6 bg-white rounded-[10px] border border-gray-100">
+                    <div class="flex items-end gap-3">
+                        <span class="text-[30px] font-bold">₹311.52</span>
+                        <span class="text-[18px] text-gray-500 line-through mb-1">₹400.90</span>
+                        <span class="text-[#2E7D32] font-bold mb-1 ml-2">20% OFF</span>
+                    </div>
+                    <p class="text-[14px] text-gray-500">+ ₹115 GST</p>
+                    <div class="flex gap-4 mt-2">
+                        <button
+                            class="flex-1 bg-white border border-[#BE2229] text-[#BE2229] font-bold py-3 rounded hover:bg-red-50">Add
+                            to Cart</button>
+                        <button class="flex-1 bg-[#BE2229] text-white font-bold py-3 rounded hover:bg-[#a0181c]">Buy
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Specifications Box -->
+                <div class="hidden md:block bg-white p-6 rounded-[10px] border border-gray-200 mb-6">
+                    <h3 class="font-bold text-lg mb-4">Specifications</h3>
+                    <ul class="text-[#525252] text-[15px] space-y-2">
+                        <li>Outer Diameter (OD): 10 mm</li>
+                        <li>Inner Diameter (ID): 5 mm</li>
+                        <li>Free Length: 44 mm</li>
+                        <li>Wire Section: Rectangular 1.5mm</li>
+                        <li>Load: Heavy Duty (Red)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Specs & Details (Stacked) -->
+        <div class="px-4 mt-6 md:hidden">
+            <div class="bg-white rounded-[10px] p-4 mb-4">
+                <h3 class="font-poppins text-[18px] text-center mb-2">Features</h3>
+                <hr class="border-gray-200 mb-4">
+                <p class="text-[#525252] text-[15px] leading-relaxed">
+                    Outer Diameter (OD) - 10 mm<br>
+                    Inner diameter(ID) - 5 mm<br>
+                    Free Length (L₀) - 44 mm<br>
+                    Wire Section (Thickness) - 1.5 mm<br>
+                    Colour Code: Red (R) – Heavy Duty<br>
+                    Spring Constant (k) - 1.5 kgf/mm
+                </p>
+            </div>
+
+            <!-- Tabs: Description, Details, etc. -->
+            <div class="flex justify-between text-[16px] text-[#C0BEBE] border-b border-[#4C4949] pb-2 mb-4">
+                <span
+                    class="text-white font-bold relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-[5px] after:bg-[#4C4949] after:rounded-t">Description</span> <!-- Text is white in Figma code?? No, background is dark? Ah, Figma code says text White but bg is F4F6F6. Wait, the Description Tab text color is #FFFFFF? That must be on a dark background? 
+                Actually Figma code says:
+                /* Description */ color: #FFFFFF;
+                Inside Frame 24.
+                Frame 24 is top: 1141px.
+                Rectangle 45 is top: 0px (relative to Frame 61?). Rectangle 45 bg is #8E8E8E.
+                So the Header for tabs is Dark Grey #8E8E8E.
+                -->
+            </div>
+            <!-- Standardizing tabs for Web -->
+            <div class="bg-[#8E8E8E] text-white rounded-t-[10px] p-3 flex justify-between text-[14px] font-bold">
+                <span class="border-b-4 border-[#4C4949] pb-1">Description</span>
+                <span class="text-[#C0BEBE] font-normal">Details</span>
+                <span class="text-[#C0BEBE] font-normal">Reviews</span>
+                <span class="text-[#C0BEBE] font-normal">FAQs</span>
+            </div>
+            <div class="bg-white p-4 rounded-b-[10px] text-[#1E1E1E] text-[15px] leading-relaxed">
+                This heavy-duty die spring is engineered for applications that require high load capacity...
+                (Full text truncated for brevity)
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="px-4 md:px-0 mt-8 mb-24">
+            <h2 class="text-[20px] font-poppins font-semibold mb-4 text-[#1E1E1E]">Related Products</h2>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+
+                <!-- Product Card 1 -->
+                <div class="bg-white border border-[#D9D9D9] rounded-[5px] p-3 relative flex flex-col h-[290px]">
+                    <span
+                        class="absolute top-3 left-0 bg-[#2E7D32] text-white text-[10px] font-bold px-2 py-0.5 rounded-r">Save
+                        20%</span>
+                    <div class="w-full h-[120px] flex items-center justify-center my-2">
+                        <img src="assets/images/image.png" alt="Product" class="max-h-full object-contain">
+                    </div>
+                    <h3 class="text-[12px] font-poppins font-medium text-[#2B2B2B] line-clamp-2 h-[36px]">Die Spring OD
+                        10 mm L 25 mm Red (R)</h3>
+                    <div class="flex items-end gap-2 mt-auto">
+                        <span class="text-[16px] font-bold">₹311</span>
+                        <span class="text-[12px] text-gray-400 line-through">₹400</span>
+                    </div>
+                    <button
+                        class="w-full bg-[#BE2229] text-white text-[12px] py-1.5 rounded mt-2 flex items-center justify-center gap-2">
+                        Add <img src="assets/icons/mobile/addtocart.svg" class="w-3 h-3 invert brightness-0">
+                    </button>
+                    <!-- Wishlist Heart -->
+                    <img src="assets/icons/mobile/star.svg" class="absolute bottom-16 right-2 w-5 h-5">
+                </div>
+
+                <!-- Product Card 2 (Duplicate for demo) -->
+                <div class="bg-white border border-[#D9D9D9] rounded-[5px] p-3 relative flex flex-col h-[290px]">
+                    <span
+                        class="absolute top-3 left-0 bg-[#2E7D32] text-white text-[10px] font-bold px-2 py-0.5 rounded-r">Save
+                        20%</span>
+                    <div class="w-full h-[120px] flex items-center justify-center my-2">
+                        <img src="assets/images/image.png" alt="Product" class="max-h-full object-contain">
+                    </div>
+                    <h3 class="text-[12px] font-poppins font-medium text-[#2B2B2B] line-clamp-2 h-[36px]">Die Spring OD
+                        12 mm L 30 mm Red</h3>
+                    <div class="flex items-end gap-2 mt-auto">
+                        <span class="text-[16px] font-bold">₹350</span>
+                        <span class="text-[12px] text-gray-400 line-through">₹450</span>
+                    </div>
+                    <button
+                        class="w-full bg-[#BE2229] text-white text-[12px] py-1.5 rounded mt-2 flex items-center justify-center gap-2">
+                        Add <img src="assets/icons/mobile/addtocart.svg" class="w-3 h-3 invert brightness-0">
+                    </button>
+                    <img src="assets/icons/mobile/star.svg" class="absolute bottom-16 right-2 w-5 h-5">
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Mobile Sticky Action Bar -->
+    <div
+        class="md:hidden fixed bottom-14 left-0 w-full bg-white shadow-[0_-2px_7px_rgba(0,0,0,0.09)] px-4 py-3 z-50 flex items-center justify-between h-[112px]">
+
+        <!-- Price Info -->
+        <div class="flex flex-col">
+            <div class="flex items-center gap-3">
+                <span class="text-[28px] font-bold font-poppins">₹311.52</span>
+                <span class="text-[18px] text-[#747474] font-semibold line-through">₹311.52</span>
+                <!-- Wait, Figma shows same price heavily discounted visually? No, 400 crossed out usually. I'll use 400 -->
+            </div>
+            <span class="text-[15px] font-semibold text-[#747474]">+ ₹115 GST</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex gap-2">
+            <button
+                class="w-[128px] h-[34px] border border-[#BE2229] text-[#BE2229] rounded-[5px] font-poppins font-semibold text-[14px]">Add
+                to Cart</button>
+            <button
+                class="w-[128px] h-[34px] bg-[#BE2229] text-white rounded-[5px] font-poppins font-semibold text-[18px]">Buy
+                Now</button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Bar (Fixed Bottom) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full bg-[#F7F7F7] h-[57px] flex justify-around items-center px-4 shadow-[0_-2px_5.8px_rgba(0,0,0,0.25)] z-50">
+        <a href="index.html" class="nav-item flex flex-col items-center justify-center w-full h-full">
+            <img src="assets/icons/mobile/home.svg" alt="Home" class="w-6 h-6 grayscale opacity-60">
+        </a>
+        <div class="nav-item flex flex-col items-center justify-center w-full h-full cursor-pointer">
+            <img src="assets/icons/mobile/categories.svg" alt="Categories" class="w-6 h-6 grayscale opacity-60">
+        </div>
+        <div class="nav-item flex flex-col items-center justify-center w-full h-full cursor-pointer">
+            <img src="assets/icons/mobile/orders.svg" alt="Orders" class="w-6 h-6 grayscale opacity-60">
+        </div>
+        <a href="profile.html" class="nav-item flex flex-col items-center justify-center w-full h-full cursor-pointer">
+            <img src="assets/icons/mobile/profile.svg" alt="Profile" class="w-6 h-6 grayscale opacity-60">
+        </a>
+    </nav>
+    <!-- Add padding to body for the double sticky bars -->
+    <style>
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 170px;
+            }
+
+            /* 112px Action + 57px Nav */
+        }
+    </style>
+
+</body>
+
+</html>
