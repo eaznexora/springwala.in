@@ -8,6 +8,11 @@
 
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
@@ -19,9 +24,9 @@
         <span class="text-white text-[13px]">Get discount on every selected product</span>
     </div>
 
-    <header class="bg-[#F4F6F6] md:bg-white border-b border-[#E8E8E8] relative z-40">
+    <header class="bg-[#F4F6F6] md:bg-white border-b border-[#E8E8E8] sticky top-0 z-50">
 
-        <div class="flex md:hidden relative w-full h-[51px] bg-white border-b border-[#E8E8E8]">
+        <div class="flex md:hidden relative w-full h-[51px] bg-white border-b border-[#E8E8E8] z-50">
             <!-- Hamburger -->
             <button id="menu-btn"
                 class="absolute left-[17px] top-[11px] w-[29px] h-[29px] flex items-center justify-center">
@@ -42,29 +47,33 @@
             </div>
         </div>
 
-        <div class="md:hidden px-[14px] py-[5px] bg-[#BE2229] flex items-center gap-3">
-            <div class="bg-white rounded-[6px] flex-1 flex items-center px-[11px] h-[30px]">
-                <img src="assets/icons/mobile/search.svg" alt="Search" class="w-4 h-4 text-[#797979]">
-                <input type="text" placeholder="Search..." class="ml-2 outline-none text-[14px] w-full">
+        <div id="mobile-sub-header" class="md:hidden flex flex-col w-full origin-top">
+            <div class="px-[14px] py-[5px] bg-[#BE2229] flex items-center gap-3">
+                <div class="bg-white rounded-[6px] flex-1 flex items-center px-[11px] h-[30px]">
+                    <img src="assets/icons/mobile/search.svg" alt="Search" class="w-4 h-4 text-[#797979]">
+                    <input type="text" placeholder="Search..." class="ml-2 outline-none text-[14px] w-full">
+                </div>
+
+                <div class="cursor-pointer flex-shrink-0">
+                    <img src="assets/icons/mobile/account.svg" alt="Account" class="w-[26px] h-[26px]">
+                </div>
             </div>
 
-            <div class="cursor-pointer flex-shrink-0">
-                <img src="assets/icons/mobile/account.svg" alt="Account" class="w-[26px] h-[26px]">
-            </div>
-        </div>
+            <!-- Shop by Categories / Deliver to Sub-header -->
+            <div class="flex flex-row justify-between items-center px-[19px] py-[6px] bg-[#F6D6D6] h-[30px]">
+                <!-- Shop by Categories -->
+                <div class="text-[#BD2830] text-[15px]" style="font-family: 'Roboto', sans-serif;">Shop by Categories
+                </div>
 
-        <!-- Shop by Categories / Deliver to Sub-header -->
-        <div class="md:hidden flex flex-row justify-between items-center px-[19px] py-[6px] bg-[#F6D6D6] h-[30px]">
-            <!-- Shop by Categories -->
-            <div class="text-[#BD2830] text-[15px]" style="font-family: 'Roboto', sans-serif;">Shop by Categories</div>
-
-            <!-- Deliver to Section -->
-            <div class="flex items-center gap-1 cursor-pointer" id="location-btn">
-                <span class="text-[#BD2830] text-[15px]" style="font-family: 'Roboto', sans-serif;">Deliver to</span>
-                <img src="assets/icons/mobile/location.svg" alt="Location" class="w-[12px] h-[16px]"
-                    style="transform: scaleX(-1); filter: brightness(0) saturate(100%) invert(18%) sepia(90%) saturate(2687%) hue-rotate(338deg) brightness(91%) contrast(92%);">
-                <span class="text-[#BD2830] text-[14px] underline truncate max-w-[130px]" id="location-text"
-                    style="font-family: 'Roboto', sans-serif;">Thane, Maharashtra</span>
+                <!-- Deliver to Section -->
+                <div class="flex items-center gap-1 cursor-pointer" id="location-btn">
+                    <span class="text-[#BD2830] text-[15px]" style="font-family: 'Roboto', sans-serif;">Deliver
+                        to</span>
+                    <img src="assets/icons/mobile/location.svg" alt="Location" class="w-[12px] h-[16px]"
+                        style="transform: scaleX(-1); filter: brightness(0) saturate(100%) invert(18%) sepia(90%) saturate(2687%) hue-rotate(338deg) brightness(91%) contrast(92%);">
+                    <span class="text-[#BD2830] text-[14px] underline truncate max-w-[130px]" id="location-text"
+                        style="font-family: 'Roboto', sans-serif;">Thane, Maharashtra</span>
+                </div>
             </div>
         </div>
 
@@ -132,7 +141,6 @@
             <img src="assets/banners/customer-support.png" alt="Customer Support" class="h-full w-auto">
         </div>
     </div>
-    </nav>
 
     <div id="mobile-menu" class="fixed inset-y-0 left-0 w-[280px] bg-white shadow-2xl z-50 hidden-menu md:hidden">
         <div class="p-6">
@@ -302,6 +310,149 @@
     </section>
 
 
+    <!-- Top sold products -->
+    <section class="featured-offers-section">
+        <div class="fo-container">
+
+            <div class="fo-header-wrapper">
+                <div class="fo-header">
+                    <h2 class="fo-title">Top sold products</h2>
+
+                    <div class="fo-pagination">
+                        <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                        <span class="fo-page-count">1–7 of 24</span>
+                        <button class="fo-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="fo-divider"></div>
+            </div>
+
+            <div class="fo-grid">
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Featured Products -->
     <section class="featured-offers-section">
         <div class="fo-container">
@@ -445,17 +596,156 @@
         </div>
     </section>
 
-
-
-
-    <!-- Recently Added -->
-    <!-- Featured Products -->
+    <!-- Top categories -->
     <section class="featured-offers-section">
         <div class="fo-container">
 
             <div class="fo-header-wrapper">
                 <div class="fo-header">
-                    <h2 class="fo-title">Featured Offers</h2>
+                    <h2 class="fo-title">Top categories</h2>
+
+                    <div class="fo-pagination">
+                        <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                        <span class="fo-page-count">1–7 of 24</span>
+                        <button class="fo-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="fo-divider"></div>
+            </div>
+
+            <div class="fo-grid">
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="fo-card">
+                    <span class="fo-badge">Save 20%</span>
+                    <a href="product.html" class="fo-image-box">
+                        <img src="assets/images/deafult.png" alt="Die Spring Red">
+                        <button class="fo-wishlist">
+                            <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-6 h-6 wishlist-icon">
+                        </button>
+                    </a>
+                    <div class="fo-details">
+                        <a href="product.html" class="fo-prod-name">Die Spring OD 10 mm L 25 mm Red (R)</a>
+                        <div class="fo-pricing">
+                            <span class="fo-price">₹311.52</span>
+                            <span class="fo-old-price">₹400.90</span>
+                        </div>
+                        <button class="fo-cart-btn">
+                            Add to Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart" class="w-4 h-4 ml-2">
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest products -->
+    <section class="featured-offers-section">
+        <div class="fo-container">
+
+            <div class="fo-header-wrapper">
+                <div class="fo-header">
+                    <h2 class="fo-title">Latest products</h2>
 
                     <div class="fo-pagination">
                         <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
@@ -797,7 +1087,7 @@
                     <a href="#">Data Protection</a>
                 </div>
 
-                <p class="text-[14px] mt-2 mb-20 md:mb-0">Copyright © 2026 All rights reserved</p>
+                <p class="text-[14px] mt-2 mb-0 md:mb-0">Copyright © 2026 All rights reserved</p>
             </div>
 
             <!-- Desktop Bottom Divider & Links -->
