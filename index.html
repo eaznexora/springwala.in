@@ -38,13 +38,13 @@
                 class="absolute left-1/2 -translate-x-1/2 top-[9px] w-[141px] h-[33px]">
 
             <!-- Cart -->
-            <div class="absolute right-[16px] top-[11px] w-[29px] h-[29px] flex items-center justify-center">
+            <a href="#" class="absolute right-[16px] top-[11px] w-[29px] h-[29px] flex items-center justify-center">
                 <svg class="w-full h-full text-[#525252]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
                     </path>
                 </svg>
-            </div>
+            </a>
         </div>
 
         <div id="mobile-sub-header" class="md:hidden flex flex-col w-full origin-top">
@@ -54,9 +54,9 @@
                     <input type="text" placeholder="Search..." class="ml-2 outline-none text-[14px] w-full">
                 </div>
 
-                <div class="cursor-pointer flex-shrink-0">
+                <a href="profile.html" class="cursor-pointer flex-shrink-0">
                     <img src="assets/icons/mobile/account.svg" alt="Account" class="w-[26px] h-[26px]">
-                </div>
+                </a>
             </div>
 
             <!-- Shop by Categories / Deliver to Sub-header -->
@@ -113,11 +113,9 @@
                     <img src="assets/icons/desktop/profile.svg" alt="Account" class="w-6 h-6 text-[#525252]">
                     <span class="text-[#525252] text-[15px]">Your Account</span>
                 </a>
-                <div class="relative cursor-pointer">
+                <a href="#" class="cursor-pointer hover:opacity-80 transition">
                     <img src="assets/icons/desktop/cart.svg" alt="Cart" class="w-6 h-6 text-[#525252]">
-                    <span
-                        class="absolute -top-2 -right-2 bg-[#BE2229] text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center">12</span>
-                </div>
+                </a>
                 <img src="assets/icons/desktop/saved-items.svg" alt="Wishlist"
                     class="w-6 h-6 text-[#525252] cursor-pointer">
             </div>
@@ -125,18 +123,18 @@
     </header>
 
     <div class="hidden md:flex max-w-[1440px] mx-auto items-center h-[56px] px-[80px]">
-        <div
+        <a href="categories.html"
             class="border border-[#BE2229] rounded-[5px] px-4 py-1.5 flex items-center gap-2 cursor-pointer hover:bg-red-50 transition">
             <img src="assets/icons/mobile/categories-red.svg" alt="Categories" class="w-4 h-4 text-[#BE2229]">
             <span class="text-[#BE2229] text-[12px] font-medium uppercase">Browse All Categories</span>
-        </div>
+        </a>
 
         <ul class="flex items-center gap-8 ml-10 text-[15px] text-[#525252]">
             <li
                 class="text-[#BE2229] font-medium border-b-2 border-[#BE2229] h-[56px] flex items-center cursor-pointer">
                 Home</li>
-            <li class="cursor-pointer hover:text-[#BE2229]">All Products</li>
-            <li class="cursor-pointer hover:text-[#BE2229]">Orders</li>
+            <li class="cursor-pointer hover:text-[#BE2229]"><a href="categories.html">All Products</a></li>
+            <li class="cursor-pointer hover:text-[#BE2229]"><a href="orders.html">Orders</a></li>
             <li class="cursor-pointer hover:text-[#BE2229]">Knowledge Centre</li>
             <li class="cursor-pointer hover:text-[#BE2229]">Contact Us</li>
         </ul>
@@ -153,11 +151,30 @@
                 <button id="close-menu" class="text-gray-500 text-2xl">&times;</button>
             </div>
             <ul class="space-y-6 text-[#525252] font-['Poppins'] text-lg">
-                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-[#BE2229] rounded-full"></span> All Products
+                <li class="flex items-center gap-3 text-[#BE2229] font-medium">
+                    <span class="w-2 h-2 bg-[#BE2229] rounded-full"></span>
+                    <a href="index.html">Home</a>
                 </li>
-                <li class="flex items-center gap-3">Your Orders</li>
-                <li class="flex items-center gap-3">Your Wishlist</li>
-                <li class="flex items-center gap-3">Your Account</li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="categories.html">Categories</a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="#">All Products</a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="orders.html">Your Orders</a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="#">Your Wishlist</a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="profile.html">Your Account</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -988,7 +1005,7 @@
 
                 <div class="flex flex-col gap-4">
                     <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">My Account</a>
-                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">My Orders</a>
+                    <a href="orders.html" class="text-[#525252] text-[15px] hover:text-[#BE2229]">My Orders</a>
                     <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">My Cart</a>
                     <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">Saved Items</a>
                 </div>
@@ -1069,8 +1086,8 @@
                     </div>
 
                     <div class="flex flex-col gap-4 text-right">
-                        <a href="#">My Account</a>
-                        <a href="#">My Orders</a>
+                        <a href="profile.html">My Account</a>
+                        <a href="orders.html">My Orders</a>
                         <a href="#">My Cart</a>
                         <a href="#">Saved Items</a>
                     </div>
@@ -1118,12 +1135,12 @@
             <img src="assets/icons/mobile/home-red.svg" alt="Home">
             <div class="active-indicator"></div>
         </div>
-        <div class="nav-item">
+        <a href="categories.html" class="nav-item cursor-pointer">
             <img src="assets/icons/mobile/categories.svg" alt="Categories">
-        </div>
-        <div class="nav-item">
+        </a>
+        <a href="orders.html" class="nav-item cursor-pointer">
             <img src="assets/icons/mobile/orders.svg" alt="Orders">
-        </div>
+        </a>
         <a href="profile.html" class="nav-item cursor-pointer">
             <img src="assets/icons/mobile/profile.svg" alt="Profile">
         </a>
