@@ -1,0 +1,15 @@
+# Editor folders
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Temporary/Log files
+*.log
+npm-debug.log*
+
+# Build folders (if you use them later)
+dist/
+build/
