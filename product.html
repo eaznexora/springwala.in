@@ -151,10 +151,8 @@
         </a>
 
         <ul class="flex items-center gap-8 ml-10 text-[15px] text-[#525252]">
-            <li
-                class="text-[#BE2229] font-medium border-b-2 border-[#BE2229] h-[56px] flex items-center cursor-pointer">
-                Home</li>
-            <li class="cursor-pointer hover:text-[#BE2229]"><a href="categories.html">All Products</a></li>
+            <li class="cursor-pointer hover:text-[#BE2229]"><a href="index.html">Home</a></li>
+            <li class="cursor-pointer hover:text-[#BE2229]"><a href="#">All Products</a></li>
             <li class="cursor-pointer hover:text-[#BE2229]"><a href="orders.html">Orders</a></li>
             <li class="cursor-pointer hover:text-[#BE2229]">Knowledge Centre</li>
             <li class="cursor-pointer hover:text-[#BE2229]">Contact Us</li>
@@ -180,8 +178,8 @@
                     <span class="w-2 h-2 bg-transparent rounded-full"></span>
                     <a href="categories.html">Categories</a>
                 </li>
-                <li class="flex items-center gap-3 text-[#BE2229] font-medium">
-                    <span class="w-2 h-2 bg-[#BE2229] rounded-full"></span>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
                     <a href="#">All Products</a>
                 </li>
                 <li class="flex items-center gap-3">
@@ -203,7 +201,7 @@
 
 
     <!-- Main Content -->
-    <main class="max-w-[1440px] mx-auto md:px-[80px] pb-[120px] md:pb-20">
+    <main class="max-w-[1440px] mx-auto md:px-[80px] pb-[180px] md:pb-20">
 
         <!-- Breadcrumb (Mobile/Desktop) -->
         <div class="px-4 py-3 text-[14px] text-[#5C5C5C] overflow-x-auto whitespace-nowrap md:px-0">
@@ -217,27 +215,54 @@
             <div class="bg-white p-4 rounded-[10px] flex flex-col items-center relative">
                 <!-- Recently Added Tag -->
                 <div
-                    class="absolute left-0 top-6 bg-[#E9783B] text-white text-[12px] font-medium px-4 py-1 rounded-r-full">
+                    class="absolute left-0 top-[15px] bg-[#E9783B] text-white text-[12px] font-medium px-4 py-1.5 rounded-r-full z-10">
                     Recently Added
                 </div>
-                <!-- Share Icon -->
-                <div
-                    class="absolute right-4 top-6 w-8 h-8 border border-[#E6E6E6] rounded flex items-center justify-center cursor-pointer hover:bg-gray-50">
-                    <img src="assets/icons/mobile/share.svg" alt="Share" class="w-5 h-5"
-                        onerror="this.src='assets/icons/mobile/orders.svg'">
-                </div>
+
+                <!-- Expand/Zoom Icon (Top Right for Mobile) -->
+                <button
+                    class="absolute right-[15px] top-[15px] w-6 h-6 flex items-center justify-center cursor-pointer hover:opacity-80 transition z-10 zoom-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="14" y1="10" x2="21" y2="3"></line>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="10" y1="14" x2="3" y2="21"></line>
+                    </svg>
+                </button>
 
                 <!-- Main Image -->
-                <div class="w-[270px] h-[270px] flex items-center justify-center my-8">
-                    <img src="assets/images/deafult.png" alt="Die Spring" class="max-w-full max-h-full object-contain">
+                <div
+                    class="w-full max-w-[270px] h-[270px] flex items-center justify-center my-4 overflow-hidden relative">
+                    <img id="mobileMainImage" src="assets/images/deafult.png" alt="Die Spring"
+                        class="w-full h-full object-contain mix-blend-multiply transition-opacity duration-300">
+                </div>
+
+                <!-- Share & Star (Bottom Right) -->
+                <div class="absolute right-[15px] bottom-[40px] flex flex-col gap-[15px] items-center z-10">
+                    <button
+                        class="w-6 h-6 flex items-center justify-center cursor-pointer hover:opacity-80 transition text-[#525252]">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                    </button>
+                    <button
+                        class="w-6 h-6 flex items-center justify-center cursor-pointer hover:opacity-80 transition product-wishlist-btn">
+                        <img src="assets/icons/mobile/star.svg" alt="Wishlist" class="w-full h-full object-contain">
+                    </button>
                 </div>
 
                 <!-- Carousel Dots -->
-                <div class="flex gap-2 mb-4">
-                    <div class="w-6 h-1 bg-[#625656] rounded-full"></div>
-                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full"></div>
-                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full"></div>
-                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full"></div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" id="mobileCarouselDots">
+                    <div class="w-6 h-1 bg-[#625656] rounded-full transition-colors duration-300 cursor-pointer"></div>
+                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full transition-colors duration-300 cursor-pointer"></div>
+                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full transition-colors duration-300 cursor-pointer"></div>
+                    <div class="w-6 h-1 bg-[#D9D9D9] rounded-full transition-colors duration-300 cursor-pointer"></div>
                 </div>
             </div>
 
@@ -278,7 +303,7 @@
         <!-- ========================================== -->
         <!-- Desktop Product Layout (3 Columns)         -->
         <!-- ========================================== -->
-        <div class="hidden md:flex flex-col mt-4">
+        <div class="hidden md:flex flex-col mt-4 mb-[60px]">
 
             <div class="flex gap-5 items-start">
 
@@ -295,41 +320,65 @@
                                     Recently Added
                                 </div>
                                 <img src="assets/images/deafult.png" alt="Main Product Image"
-                                    class="max-w-[80%] max-h-[80%] object-contain">
+                                    class="max-w-[80%] max-h-[80%] object-contain mix-blend-multiply">
+
+                                <!-- Expand/Zoom Icon (Bottom Left) -->
+                                <button
+                                    class="absolute left-[15px] bottom-[15px] w-6 h-6 flex items-center justify-center cursor-pointer hover:opacity-80 transition z-10 zoom-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#525252"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="14" y1="10" x2="21" y2="3"></line>
+                                        <polyline points="9 21 3 21 3 15"></polyline>
+                                        <line x1="10" y1="14" x2="3" y2="21"></line>
+                                    </svg>
+                                </button>
+
+                                <!-- Share & Star Icons (Bottom Right) -->
                                 <div
-                                    class="absolute right-4 bottom-4 w-[25px] h-[24px] border-[1.5px] border-[#F9C71D] rounded flex items-center justify-center cursor-pointer hover:bg-yellow-50">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F9C71D"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polygon
-                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                        </polygon>
-                                    </svg>
-                                </div>
-                                <div class="absolute right-4 top-4 cursor-pointer opacity-70 hover:opacity-100">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="18" cy="5" r="3"></circle>
-                                        <circle cx="6" cy="12" r="3"></circle>
-                                        <circle cx="18" cy="19" r="3"></circle>
-                                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                                    </svg>
+                                    class="absolute right-[15px] bottom-[15px] flex flex-col gap-[12px] items-center z-10">
+                                    <button
+                                        class="w-[22px] h-[22px] flex items-center justify-center cursor-pointer hover:opacity-80 transition text-[#525252]">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="18" cy="5" r="3"></circle>
+                                            <circle cx="6" cy="12" r="3"></circle>
+                                            <circle cx="18" cy="19" r="3"></circle>
+                                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="w-[22px] h-[22px] flex items-center justify-center cursor-pointer hover:opacity-80 transition product-wishlist-btn">
+                                        <img src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                            class="w-full h-full object-contain">
+                                    </button>
                                 </div>
                             </div>
 
                             <!-- Thumbnails -->
+                            <!-- Thumbnails -->
                             <div class="flex gap-[17px] w-full">
                                 <div
-                                    class="w-[96px] h-[88px] bg-[#D9D9D9] rounded-[7px] cursor-pointer hover:opacity-80 transition">
+                                    class="w-[96px] h-[88px] bg-[#D9D9D9] rounded-[7px] cursor-pointer hover:opacity-80 transition overflow-hidden">
+                                    <img src="assets/images/deafult.png" alt="Thumb"
+                                        class="w-full h-full object-contain mix-blend-multiply p-2">
                                 </div>
                                 <div
-                                    class="w-[96px] h-[88px] bg-[#D9D9D9] rounded-[7px] cursor-pointer hover:opacity-80 transition">
+                                    class="w-[96px] h-[88px] bg-[#D9D9D9] rounded-[7px] cursor-pointer hover:opacity-80 transition overflow-hidden">
+                                    <img src="assets/images/deafult.png" alt="Thumb"
+                                        class="w-full h-full object-contain mix-blend-multiply p-2">
                                 </div>
                                 <div
-                                    class="w-[96px] h-[88px] bg-[#D9D9D9] rounded-[7px] cursor-pointer hover:opacity-80 transition">
+                                    class="w-[96px] h-[88px] bg-[#D9D9D9] rounded-[7px] cursor-pointer hover:opacity-80 transition overflow-hidden">
+                                    <img src="assets/images/deafult.png" alt="Thumb"
+                                        class="w-full h-full object-contain mix-blend-multiply p-2">
                                 </div>
                                 <div
-                                    class="w-[96px] h-[88px] bg-[#D9D9D9] rounded-[7px] cursor-pointer hover:opacity-80 transition">
+                                    class="w-[96px] h-[88px] bg-[#D9D9D9] rounded-[7px] cursor-pointer hover:opacity-80 transition overflow-hidden">
+                                    <img src="assets/images/deafult.png" alt="Thumb"
+                                        class="w-full h-full object-contain mix-blend-multiply p-2">
                                 </div>
                             </div>
                         </div>
@@ -477,13 +526,15 @@
                     <div
                         class="w-full bg-[#F9C71D] rounded-[11px] h-[74px] flex items-center justify-between px-6 relative overflow-hidden">
                         <div class="flex flex-col justify-center">
-                            <span class="text-[#000000] text-[24px] font-black font-['Roboto'] leading-[24px]">Flat ₹200
-                                OFF</span>
-                            <span class="text-[#000000] text-[12px] font-['Roboto'] mt-1">on this Product</span>
+                            <span
+                                class="text-[#000000] text-[24px] font-black font-['Roboto'] leading-tight whitespace-nowrap">Flat
+                                ₹200 OFF</span>
+                            <span class="text-[#000000] text-[12px] font-['Roboto'] mt-[1px]">on this Product</span>
                         </div>
-                        <div class="bg-[#FFE280] rounded-[5px] px-3 py-1.5 flex items-center justify-center">
-                            <span class="text-[#212121] text-[14px] font-normal font-['Roboto']">Until 20th Jan
-                                2026</span>
+                        <div
+                            class="bg-[#FFE280] rounded-[5px] px-[10px] py-[6px] flex items-center justify-center flex-shrink-0 ml-2">
+                            <span class="text-[#212121] text-[13px] font-medium font-['Roboto'] whitespace-nowrap">Until
+                                20th Jan 2026</span>
                         </div>
                     </div>
 
@@ -529,7 +580,7 @@
                             <!-- Discount -->
                             <div class="flex justify-between items-center">
                                 <span class="text-[#000000] text-[13px] font-['Roboto']">Discount</span>
-                                <span class="text-[#000000] text-[13px] font-['Roboto'] text-right">-₹200.00</span>
+                                <span class="text-[#000000] text-[13px] font-['Roboto'] text-right">- ₹200.00</span>
                             </div>
                             <!-- GST -->
                             <div class="flex justify-between items-center">
@@ -563,9 +614,17 @@
                         </div>
                     </div>
 
-                    <!-- Figma Placeholders -->
-                    <div class="w-full h-[277px] bg-[#D9D9D9] rounded-[10px]"></div>
-                    <div class="w-full h-[138px] bg-[#D9D9D9] rounded-[10px]"></div>
+                    <!-- Banner Images -->
+                    <div
+                        class="w-full rounded-[10px] overflow-hidden bg-white shadow-sm flex items-center justify-center border border-gray-100">
+                        <img src="assets/images/deafult.png" alt="Promo Large"
+                            class="w-full h-auto max-h-[277px] object-cover mix-blend-multiply">
+                    </div>
+                    <div
+                        class="w-full rounded-[10px] overflow-hidden bg-white shadow-sm flex items-center justify-center border border-gray-100 mt-[-8px]">
+                        <img src="assets/images/deafult.png" alt="Promo Small"
+                            class="w-full h-auto max-h-[138px] object-cover mix-blend-multiply">
+                    </div>
 
                 </div>
             </div>
@@ -586,28 +645,123 @@
                 </p>
             </div>
 
-            <!-- Tabs: Description, Details, etc. -->
-            <div class="flex justify-between text-[16px] text-[#C0BEBE] border-b border-[#4C4949] pb-2 mb-4">
-                <span
-                    class="text-white font-bold relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-[5px] after:bg-[#4C4949] after:rounded-t">Description</span> <!-- Text is white in Figma code?? No, background is dark? Ah, Figma code says text White but bg is F4F6F6. Wait, the Description Tab text color is #FFFFFF? That must be on a dark background? 
-                Actually Figma code says:
-                /* Description */ color: #FFFFFF;
-                Inside Frame 24.
-                Frame 24 is top: 1141px.
-                Rectangle 45 is top: 0px (relative to Frame 61?). Rectangle 45 bg is #8E8E8E.
-                So the Header for tabs is Dark Grey #8E8E8E.
-                -->
+            <!-- Mobile Promo Banner -->
+            <div
+                class="w-full bg-[#F9C71D] rounded-[11px] h-[74px] flex items-center justify-between px-5 relative overflow-hidden mb-4">
+                <div class="flex flex-col justify-center">
+                    <span
+                        class="text-[#000000] text-[20px] font-black font-['Roboto'] leading-tight whitespace-nowrap">Flat
+                        ₹200 OFF</span>
+                    <span class="text-[#000000] text-[11px] font-['Roboto'] mt-[1px]">on this Product</span>
+                </div>
+                <div
+                    class="bg-[#FFE280] rounded-[5px] px-[8px] py-[6px] flex items-center justify-center flex-shrink-0 ml-2">
+                    <span class="text-[#212121] text-[11px] font-medium font-['Roboto'] whitespace-nowrap">Until 20th
+                        Jan 2026</span>
+                </div>
             </div>
-            <!-- Standardizing tabs for Web -->
-            <div class="bg-[#8E8E8E] text-white rounded-t-[10px] p-3 flex justify-between text-[14px] font-bold">
-                <span class="border-b-4 border-[#4C4949] pb-1">Description</span>
-                <span class="text-[#C0BEBE] font-normal">Details</span>
-                <span class="text-[#C0BEBE] font-normal">Reviews</span>
-                <span class="text-[#C0BEBE] font-normal">FAQs</span>
+
+            <!-- Mobile Order Box -->
+            <div class="w-full bg-white rounded-[11px] p-4 flex flex-col shadow-sm mb-4">
+                <h3 class="text-[#1E1E1E] text-[15px] font-['Roboto'] mb-3 px-1">Order Details</h3>
+                <div class="w-full h-[1px] bg-[#E8E8E8] mb-4"></div>
+
+                <div class="flex flex-col gap-4 px-1">
+                    <div class="flex justify-between items-center">
+                        <span class="text-[#000000] text-[13px] font-['Roboto']">Batch</span>
+                        <span class="text-[#000000] text-[13px] font-['Roboto'] text-right">Pack of 6</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[#000000] text-[13px] font-['Roboto']">HSN</span>
+                        <span class="text-[#000000] text-[13px] font-['Roboto'] text-right">ABCD11010</span>
+                    </div>
+                </div>
+
+                <div class="w-full h-[1px] bg-[#E8E8E8] my-4"></div>
+
+                <div class="flex flex-col gap-4 px-1">
+                    <div class="flex justify-between items-center">
+                        <span class="text-[#000000] text-[13px] font-['Roboto']">Price</span>
+                        <span class="text-[#000000] text-[13px] font-['Roboto'] text-right">₹200.00</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[#000000] text-[13px] font-['Roboto']">Discount</span>
+                        <span class="text-[#000000] text-[13px] font-['Roboto'] text-right">- ₹200.00</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[#000000] text-[13px] font-['Roboto']">GST</span>
+                        <span class="text-[#000000] text-[13px] font-['Roboto'] text-right">₹110.00</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[#000000] text-[13px] font-['Roboto']">Delivery Charges</span>
+                        <span class="text-[#000000] text-[13px] font-['Roboto'] text-right">₹30.00</span>
+                    </div>
+                </div>
+
+                <div class="w-full h-[1px] bg-[#E8E8E8] my-4"></div>
+
+                <div class="flex justify-between items-center px-1">
+                    <span class="text-[#000000] text-[15px] font-medium font-['Roboto']">Sub Total</span>
+                    <span
+                        class="text-[#000000] text-[18px] font-medium font-['Roboto'] text-right flex items-center justify-end">₹340.00</span>
+                </div>
             </div>
-            <div class="bg-white p-4 rounded-b-[10px] text-[#1E1E1E] text-[15px] leading-relaxed">
-                This heavy-duty die spring is engineered for applications that require high load capacity...
-                (Full text truncated for brevity)
+
+            <!-- Mobile Tabs & Description -->
+            <div
+                class="bg-[#8E8E8E] rounded-[8px] flex h-[40px] items-end px-3 gap-5 mb-0 overflow-x-auto hide-scroll mt-6 shadow-sm">
+                <!-- Active Tab -->
+                <div
+                    class="h-[32px] flex items-center border-b-[3px] border-[#4C4949] cursor-pointer whitespace-nowrap">
+                    <span
+                        class="text-white font-bold text-[14px] font-['Roboto'] leading-[16px] translate-y-[1px]">Description</span>
+                </div>
+                <!-- Inactive Tabs -->
+                <div class="h-[32px] flex items-center cursor-pointer opacity-70 whitespace-nowrap">
+                    <span
+                        class="text-white font-normal text-[14px] font-['Roboto'] leading-[16px] translate-y-[-1px] hover:text-white hover:opacity-100 transition">Product
+                        Details</span>
+                </div>
+                <div class="h-[32px] flex items-center cursor-pointer opacity-70 whitespace-nowrap">
+                    <span
+                        class="text-white font-normal text-[14px] font-['Roboto'] leading-[16px] translate-y-[-1px] hover:text-white hover:opacity-100 transition">Reviews</span>
+                </div>
+                <div class="h-[32px] flex items-center cursor-pointer opacity-70 whitespace-nowrap">
+                    <span
+                        class="text-white font-normal text-[14px] font-['Roboto'] leading-[16px] translate-y-[-1px] hover:text-white hover:opacity-100 transition">FAQs</span>
+                </div>
+            </div>
+            <!-- Description Content Box -->
+            <div
+                class="bg-white px-5 py-5 rounded-b-[10px] text-[#1E1E1E] text-[13px] font-medium font-['Roboto'] leading-[18px] mb-6 shadow-sm border border-gray-100 mt-[-2px]">
+                <h4 class="font-bold text-[14px] font-['Roboto'] mb-4">Product Description</h4>
+                <p class="mb-4">This heavy-duty die spring is engineered for applications that require high load
+                    capacity, consistent force output, and controlled deflection. Manufactured using rectangular wire,
+                    the spring is designed to distribute load evenly, resulting in improved durability and reduced
+                    fatigue under repetitive compression cycles.</p>
+                <p class="mb-4">The spring is suitable for use in die and mould assemblies, press tools, jigs, fixtures,
+                    and various industrial mechanisms where space constraints demand high performance in compact form.
+                    Its construction allows it to operate reliably under continuous working conditions while maintaining
+                    dimensional stability.</p>
+                <p class="mb-4">Designed for precision-oriented environments, this die spring provides predictable
+                    compression behaviour, making it ideal for tooling systems that require accuracy, repeatability, and
+                    long service life. The surface finish and material selection contribute to resistance against wear
+                    during prolonged operation.</p>
+                <p>This product is intended for general industrial use and is commonly selected for applications
+                    involving moderate to heavy loads, short to medium stroke lengths, and repeated compression cycles.
+                </p>
+            </div>
+
+            <!-- Mobile Promo Banner Placeholders -->
+            <div
+                class="w-full bg-[#DCDCDC] rounded-[10px] h-[320px] mb-4 overflow-hidden flex items-center justify-center border border-gray-200 shadow-sm">
+                <img src="assets/images/deafult.png" alt="Promo Large"
+                    class="w-full h-full object-cover mix-blend-multiply opacity-10">
+            </div>
+            <div
+                class="w-full bg-[#DCDCDC] rounded-[10px] h-[160px] mb-8 overflow-hidden flex items-center justify-center border border-gray-200 shadow-sm">
+                <img src="assets/images/deafult.png" alt="Promo Small"
+                    class="w-full h-full object-cover mix-blend-multiply opacity-10">
             </div>
         </div>
 
@@ -619,10 +773,23 @@
                     <div class="fo-header">
                         <h2 class="fo-title">Related Products</h2>
 
-                        <div class="fo-pagination">
-                            <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                            <span class="fo-page-count">1–7 of 24</span>
-                            <button class="fo-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="fo-pagination flex items-center gap-[10px]">
+                            <button
+                                class="w-[30px] h-[30px] border border-[#E0E0E0] rounded-[4px] flex items-center justify-center bg-white text-[#BDBDBD] hover:bg-gray-50 focus:outline-none transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <span class="text-[#746A6A] font-bold text-[18px] font-['Roboto'] tracking-[0.5px]">1-6 of
+                                24</span>
+                            <button
+                                class="w-[30px] h-[30px] border border-[#E0E0E0] rounded-[4px] flex items-center justify-center bg-white text-[#212121] hover:bg-gray-50 focus:outline-none transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="fo-divider"></div>
@@ -768,10 +935,23 @@
                     <div class="fo-header">
                         <h2 class="fo-title">Top sold products</h2>
 
-                        <div class="fo-pagination">
-                            <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                            <span class="fo-page-count">1–7 of 24</span>
-                            <button class="fo-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="fo-pagination flex items-center gap-[10px]">
+                            <button
+                                class="w-[30px] h-[30px] border border-[#E0E0E0] rounded-[4px] flex items-center justify-center bg-white text-[#BDBDBD] hover:bg-gray-50 focus:outline-none transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <span class="text-[#746A6A] font-bold text-[18px] font-['Roboto'] tracking-[0.5px]">1-6 of
+                                24</span>
+                            <button
+                                class="w-[30px] h-[30px] border border-[#E0E0E0] rounded-[4px] flex items-center justify-center bg-white text-[#212121] hover:bg-gray-50 focus:outline-none transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="fo-divider"></div>
@@ -917,10 +1097,23 @@
                     <div class="fo-header">
                         <h2 class="fo-title">Featured Products</h2>
 
-                        <div class="fo-pagination">
-                            <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                            <span class="fo-page-count">1–7 of 24</span>
-                            <button class="fo-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="fo-pagination flex items-center gap-[10px]">
+                            <button
+                                class="w-[30px] h-[30px] border border-[#E0E0E0] rounded-[4px] flex items-center justify-center bg-white text-[#BDBDBD] hover:bg-gray-50 focus:outline-none transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <span class="text-[#746A6A] font-bold text-[18px] font-['Roboto'] tracking-[0.5px]">1-6 of
+                                24</span>
+                            <button
+                                class="w-[30px] h-[30px] border border-[#E0E0E0] rounded-[4px] flex items-center justify-center bg-white text-[#212121] hover:bg-gray-50 focus:outline-none transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="fo-divider"></div>
@@ -1066,10 +1259,23 @@
                     <div class="fo-header">
                         <h2 class="fo-title">Latest products</h2>
 
-                        <div class="fo-pagination">
-                            <button class="fo-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                            <span class="fo-page-count">1–7 of 24</span>
-                            <button class="fo-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="fo-pagination flex items-center gap-[10px]">
+                            <button
+                                class="w-[30px] h-[30px] border border-[#E0E0E0] rounded-[4px] flex items-center justify-center bg-white text-[#BDBDBD] hover:bg-gray-50 focus:outline-none transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <span class="text-[#746A6A] font-bold text-[18px] font-['Roboto'] tracking-[0.5px]">1-6 of
+                                24</span>
+                            <button
+                                class="w-[30px] h-[30px] border border-[#E0E0E0] rounded-[4px] flex items-center justify-center bg-white text-[#212121] hover:bg-gray-50 focus:outline-none transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="fo-divider"></div>
@@ -1361,25 +1567,38 @@
 
     <!-- Mobile Sticky Action Bar -->
     <div
-        class="md:hidden fixed bottom-[57px] left-0 w-full bg-white shadow-[0_-2px_7px_rgba(0,0,0,0.09)] px-3 py-3 z-50 flex items-center justify-between h-[85px] box-border">
-
-        <!-- Price Info -->
-        <div class="flex flex-col flex-shrink-0 mr-2 min-w-0">
+        class="md:hidden fixed bottom-[57px] left-0 w-full bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.05)] px-4 py-3 z-[90] flex flex-col gap-3 border-t border-gray-100">
+        <!-- Row 1: Price and Quantity -->
+        <div class="flex justify-between items-center">
+            <!-- Price -->
             <div class="flex items-center gap-2">
-                <span class="text-[22px] font-bold font-poppins leading-none">₹311.52</span>
-                <span class="text-[14px] text-[#747474] font-semibold line-through leading-none">₹400.90</span>
+                <span class="text-[28px] font-black font-['Roboto'] leading-none text-black">₹311.52</span>
+                <span
+                    class="text-[18px] font-bold text-[#808080] line-through leading-none relative top-[2px]">₹311.52</span>
             </div>
-            <span class="text-[13px] font-semibold text-[#747474] mt-1 truncate">+ ₹115 GST</span>
+            <!-- Quantity -->
+            <div class="flex flex-col items-center">
+                <span class="text-[12px] font-bold font-['Roboto'] text-black mb-1">Quantity</span>
+                <div class="flex items-center w-[74px] h-[24px]">
+                    <button
+                        class="w-[20px] h-[24px] flex items-center justify-center text-white bg-[#C6C6C6] font-bold text-[14px] leading-none focus:outline-none">-</button>
+                    <div
+                        class="flex-1 h-[24px] flex justify-center items-center text-black text-[14px] font-bold bg-white">
+                        20</div>
+                    <button
+                        class="w-[20px] h-[24px] flex items-center justify-center text-white bg-[#BE2229] font-bold text-[14px] leading-none focus:outline-none">+</button>
+                </div>
+            </div>
         </div>
 
-        <!-- Buttons -->
-        <div class="flex items-center gap-1.5 flex-grow justify-end min-w-[40%]">
+        <!-- Row 2: Buttons -->
+        <div class="flex gap-2">
             <button
-                class="flex-1 px-1 h-[36px] border border-[#BE2229] text-[#BE2229] rounded-[5px] font-poppins font-semibold text-[13px] whitespace-nowrap truncate max-w-[120px]">Add
-                to Cart</button>
-            <button
-                class="flex-1 px-1 h-[36px] bg-[#BE2229] text-white rounded-[5px] font-poppins font-semibold text-[14px] whitespace-nowrap truncate max-w-[120px]">Buy
+                class="flex-1 h-[40px] bg-[#BE2229] text-white rounded-[6px] font-semibold text-[16px] font-['Roboto'] flex items-center justify-center">Buy
                 Now</button>
+            <button
+                class="flex-1 h-[40px] bg-white border border-[#BE2229] text-[#BE2229] rounded-[6px] font-semibold text-[16px] font-['Roboto'] flex items-center justify-center">Add
+                to Cart</button>
         </div>
     </div>
 
@@ -1409,6 +1628,205 @@
     </style>
 
     <script src="assets/js/script.js"></script>
+
+    <!-- Product Image Zoom & Gallery Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Create Modal Container
+            const modal = document.createElement('div');
+            modal.innerHTML = `
+                <div id="imageModal" class="fixed inset-0 z-[9999] hidden bg-black bg-opacity-90 flex flex-col items-center justify-center backdrop-blur-sm transition-opacity duration-300">
+                    <button id="closeModal" class="absolute top-6 right-6 text-white hover:text-gray-300 focus:outline-none z-50">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                    <!-- Modal Content Container -->
+                    <div class="relative w-full h-full flex flex-col items-center justify-center pt-8 pb-32">
+                        <img id="modalImage" src="" alt="Expanded Image" class="max-w-[95vw] max-h-[70vh] object-contain select-none">
+                    </div>
+                    <!-- Thumbnails row -->
+                    <div id="modalThumbnails" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 max-w-[95vw] overflow-x-auto px-4 py-3 bg-black/60 rounded-[10px] items-center">
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
+            const modalThumbnailsContainer = document.getElementById('modalThumbnails');
+            const zoomBtns = document.querySelectorAll('.zoom-btn');
+            const thumbnails = document.querySelectorAll('.flex.gap-\\[17px\\] > div > img');
+            const desktopMainImg = document.querySelector('.w-\\[435px\\] > div > img.mix-blend-multiply');
+
+            // Set up common images
+            const sliderImages = [
+                'assets/images/deafult.png',
+                'assets/images/deafult.png',
+                'assets/images/deafult.png',
+                'assets/images/deafult.png'
+            ];
+
+            // Setup Modal Thumbnails
+            sliderImages.forEach((imgSrc, i) => {
+                const thumbWrapper = document.createElement('div');
+                thumbWrapper.className = 'w-[60px] h-[60px] flex-shrink-0 bg-white rounded-[6px] overflow-hidden cursor-pointer hover:opacity-80 transition cursor-pointer border-2 border-transparent';
+                const imgNode = document.createElement('img');
+                imgNode.src = imgSrc;
+                imgNode.className = 'w-full h-full object-contain p-1';
+                thumbWrapper.appendChild(imgNode);
+
+                thumbWrapper.addEventListener('click', () => {
+                    modalImage.src = imgSrc;
+                    // Active state indication
+                    Array.from(modalThumbnailsContainer.children).forEach(c => c.classList.remove('border-[#BE2229]'));
+                    thumbWrapper.classList.add('border-[#BE2229]');
+                });
+                modalThumbnailsContainer.appendChild(thumbWrapper);
+            });
+
+            // 2. Modal Functions
+            function openModal(imgSrc) {
+                modalImage.src = imgSrc;
+                imageModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+
+                // Highlight corresponding thumbnail 
+                Array.from(modalThumbnailsContainer.children).forEach((child, i) => {
+                    child.classList.remove('border-[#BE2229]');
+                    if (child.querySelector('img').src === modalImage.src && child.classList.length > 0) {
+                        child.classList.add('border-[#BE2229]');
+                    }
+                });
+            }
+
+            function close() {
+                imageModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            closeModal.addEventListener('click', close);
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal || e.target.parentElement === imageModal) close();
+            });
+
+            // 3. Bind Zoom Expand Buttons
+            zoomBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const container = btn.parentElement;
+                    const img = container.querySelector('img');
+                    if (img) openModal(img.src);
+                });
+            });
+
+            // 4. Bind Thumbnails Activity (Desktop)
+            thumbnails.forEach(thumb => {
+                thumb.parentElement.addEventListener('click', () => {
+                    if (desktopMainImg) {
+                        desktopMainImg.src = thumb.src;
+                    }
+                    openModal(thumb.src); // ALSO open the modal carousel upon clicking a thumbnail!
+                });
+            });
+
+            // 5. Mobile Auto Carousel Logic
+            const mobileMainImage = document.getElementById('mobileMainImage');
+            const mobileDotsContainer = document.getElementById('mobileCarouselDots');
+
+            if (mobileMainImage && mobileDotsContainer) {
+                const dots = Array.from(mobileDotsContainer.children);
+                let currentIndex = 0;
+
+                function changeMobileSlide(index) {
+                    dots.forEach((dot, i) => {
+                        dot.classList.remove('bg-[#625656]');
+                        dot.classList.add('bg-[#D9D9D9]');
+                        if (i === index) {
+                            dot.classList.remove('bg-[#D9D9D9]');
+                            dot.classList.add('bg-[#625656]');
+                        }
+                    });
+
+                    // simple fade
+                    mobileMainImage.style.opacity = '0.5';
+                    setTimeout(() => {
+                        mobileMainImage.src = sliderImages[index];
+                        mobileMainImage.style.opacity = '1';
+                    }, 150);
+
+                    currentIndex = index;
+                }
+
+                let slideInterval = setInterval(() => {
+                    let nextIndex = (currentIndex + 1) % sliderImages.length;
+                    changeMobileSlide(nextIndex);
+                }, 3000);
+
+                dots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(slideInterval);
+                        changeMobileSlide(i);
+                        slideInterval = setInterval(() => {
+                            let nextIndex = (currentIndex + 1) % sliderImages.length;
+                            changeMobileSlide(nextIndex);
+                        }, 3000);
+                    });
+                });
+
+                // --- Mobile Swipe Support ---
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                const handleSwipe = () => {
+                    const swipeDistance = touchEndX - touchStartX;
+                    if (Math.abs(swipeDistance) > 40) { // threshold
+                        clearInterval(slideInterval);
+                        if (swipeDistance < 0) {
+                            // swiped left -> next
+                            let nextIndex = (currentIndex + 1) % sliderImages.length;
+                            changeMobileSlide(nextIndex);
+                        } else {
+                            // swiped right -> prev
+                            let prevIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
+                            changeMobileSlide(prevIndex);
+                        }
+                        // restart interval
+                        slideInterval = setInterval(() => {
+                            let nextIndex = (currentIndex + 1) % sliderImages.length;
+                            changeMobileSlide(nextIndex);
+                        }, 3000);
+                    }
+                };
+
+                // Add listeners to the container of the mobile image
+                const swipeContainer = mobileMainImage.parentElement;
+                swipeContainer.addEventListener('touchstart', e => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                swipeContainer.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, { passive: true });
+            }
+
+            // 6. Product Wishlist Toggle (Main Image Stars)
+            const productWishlistBtns = document.querySelectorAll('.product-wishlist-btn');
+            productWishlistBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const img = btn.querySelector('img');
+                    if (img) {
+                        const currentSrc = img.getAttribute('src');
+                        if (currentSrc.includes('star.svg')) {
+                            img.setAttribute('src', 'assets/icons/mobile/star-gold.svg');
+                        } else {
+                            img.setAttribute('src', 'assets/icons/mobile/star.svg');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
