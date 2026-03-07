@@ -149,4 +149,42 @@ if (locationBtn && locationText) {
             alert("Geolocation is not supported by your browser.");
         }
     });
-}
+}// Mobile Filter Drawer Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn-mobile, button:has(svg path[d="M4 6H20M6 12H18M8 18H16"])');
+    const filterDrawer = document.getElementById('filter-drawer');
+    const filterOverlay = document.getElementById('filter-overlay');
+    const closeFilterBtn = document.getElementById('close-filter');
+    const applyFilterBtn = document.getElementById('apply-filter');
+
+    function openFilter() {
+        if(filterDrawer && filterOverlay) {
+            filterOverlay.classList.remove('hidden');
+            // Small delay to allow display to apply before opacity transition
+            setTimeout(() => {
+                filterOverlay.classList.remove('opacity-0');
+                filterDrawer.classList.remove('translate-x-full');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeFilter() {
+        if(filterDrawer && filterOverlay) {
+            filterOverlay.classList.add('opacity-0');
+            filterDrawer.classList.add('translate-x-full');
+            setTimeout(() => {
+                filterOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', openFilter);
+    });
+
+    if(closeFilterBtn) closeFilterBtn.addEventListener('click', closeFilter);
+    if(filterOverlay) filterOverlay.addEventListener('click', closeFilter);
+    if(applyFilterBtn) applyFilterBtn.addEventListener('click', closeFilter);
+});

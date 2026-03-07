@@ -1,0 +1,1304 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Springwala | Your Industrial Store</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Double Range Slider Fix to allow dragging overlapping thumbs */
+        .range-slider-input {
+            pointer-events: none;
+        }
+
+        .range-slider-input::-webkit-slider-thumb {
+            pointer-events: auto;
+        }
+
+        .range-slider-input::-moz-range-thumb {
+            pointer-events: auto;
+        }
+
+        /* Hide scrollbar on category carousel (Chrome/Safari) */
+        #cat-carousel::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 font-['Roboto']">
+
+    <div class="bg-[#BE2229] h-[24px] flex items-center justify-center">
+        <span class="text-white text-[13px]">Get discount on every selected product</span>
+    </div>
+
+    <header class="bg-[#F4F6F6] md:bg-white border-b border-[#E8E8E8] sticky top-0 z-50">
+
+        <div class="flex md:hidden relative w-full h-[51px] bg-white border-b border-[#E8E8E8] z-50">
+            <!-- Hamburger -->
+            <button id="menu-btn"
+                class="absolute left-[17px] top-[11px] w-[29px] h-[29px] flex items-center justify-center">
+                <img src="assets/icons/mobile/hamburger.svg" alt="Menu" class="w-full h-full object-contain">
+            </button>
+
+            <!-- Logo -->
+            <img src="assets/images/header.png" alt="Springwala Logo"
+                class="absolute left-1/2 -translate-x-1/2 top-[9px] w-[141px] h-[33px]">
+
+            <!-- Cart -->
+            <a href="cart.html"
+                class="absolute right-[16px] top-[11px] w-[29px] h-[29px] flex items-center justify-center">
+                <svg class="w-full h-full text-[#525252]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        <div id="mobile-sub-header" class="md:hidden flex flex-col w-full origin-top">
+            <div class="px-[14px] py-[5px] bg-[#BE2229] flex items-center gap-3">
+                <div class="bg-white rounded-[6px] flex-1 flex items-center px-[11px] h-[30px]">
+                    <img src="assets/icons/mobile/search.svg" alt="Search" class="w-4 h-4 text-[#797979]">
+                    <input type="text" placeholder="Search..." class="ml-2 outline-none text-[14px] w-full">
+                </div>
+
+                <a href="login.html" class="cursor-pointer flex-shrink-0">
+                    <img src="assets/icons/mobile/account.svg" alt="Account" class="w-[26px] h-[26px]">
+                </a>
+            </div>
+
+            <!-- Shop by Categories / Deliver to Sub-header -->
+            <div
+                class="flex flex-row justify-between items-center px-[15px] py-[6px] bg-[#F6D6D6] h-[30px] w-full gap-2">
+                <!-- Shop by Categories -->
+                <div class="text-[#BD2830] text-[12px] sm:text-[14px] whitespace-nowrap"
+                    style="font-family: 'Roboto', sans-serif;">Shop by Categories
+                </div>
+
+                <!-- Deliver to Section -->
+                <div class="flex items-center gap-1 cursor-pointer min-w-0" id="location-btn">
+                    <span class="text-[#BD2830] text-[12px] sm:text-[14px] whitespace-nowrap"
+                        style="font-family: 'Roboto', sans-serif;">Deliver to</span>
+                    <img src="assets/icons/mobile/location.svg" alt="Location"
+                        class="w-[10px] sm:w-[12px] h-[14px] sm:h-[16px] flex-shrink-0"
+                        style="transform: scaleX(-1); filter: brightness(0) saturate(100%) invert(18%) sepia(90%) saturate(2687%) hue-rotate(338deg) brightness(91%) contrast(92%);">
+                    <span
+                        class="text-[#BD2830] text-[12px] sm:text-[14px] underline truncate max-w-[100px] sm:max-w-[130px]"
+                        id="location-text" style="font-family: 'Roboto', sans-serif;">Thane, Maharashtra</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md:flex max-w-[1440px] mx-auto items-center justify-between px-[80px] h-[73px]">
+            <img src="assets/images/header.png" alt="Springwala Logo" class="h-[40px] w-auto">
+
+            <div class="flex items-start gap-2 ml-8">
+                <img src="assets/icons/desktop/location.svg" alt="Location" class="w-4 h-4 mt-1 text-[#747474]">
+                <div class="flex flex-col">
+                    <span class="text-[#747474] text-[10px]">Location</span>
+                    <span class="text-[#242323] text-[12px] font-medium">Thane, Maharashtra</span>
+                </div>
+            </div>
+
+            <div class="flex-1 max-w-[519px] mx-10 flex h-[40px]">
+                <div
+                    class="border border-[#BE2229] rounded-l-[6px] px-3 flex items-center gap-2 cursor-pointer bg-white">
+                    <span class="text-[#BE2229] text-[13px]">All Categories</span>
+                    <svg class="w-3 h-3 text-[#BE2229]" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="flex-1 border border-[#D7D9D9] border-l-0 rounded-r-[6px] flex items-center px-3 bg-white">
+                    <input type="text" class="flex-1 outline-none text-[13px]" placeholder="Search Products...">
+                    <img src="assets/icons/desktop/search.svg" alt="Search" class="w-5 h-5 text-[#797979]">
+                </div>
+            </div>
+
+            <div class="flex items-center gap-7">
+                <a href="login.html" class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
+                    <img src="assets/icons/desktop/profile.svg" alt="Account" class="w-6 h-6 text-[#525252]">
+                    <span class="text-[#525252] text-[15px]">Your Account</span>
+                </a>
+                <a href="cart.html" class="cursor-pointer hover:opacity-80 transition">
+                    <img src="assets/icons/desktop/cart.svg" alt="Cart" class="w-6 h-6 text-[#525252]">
+                </a>
+                <img src="assets/icons/desktop/saved-items.svg" alt="Wishlist"
+                    class="w-6 h-6 text-[#525252] cursor-pointer">
+            </div>
+        </div>
+    </header>
+
+    <div class="hidden md:flex max-w-[1440px] mx-auto items-center h-[56px] px-[80px]">
+        <a href="categories.html"
+            class="border border-[#BE2229] rounded-[5px] px-4 py-1.5 flex items-center gap-2 cursor-pointer hover:bg-red-50 transition">
+            <img src="assets/icons/mobile/categories-red.svg" alt="Categories" class="w-4 h-4 text-[#BE2229]">
+            <span class="text-[#BE2229] text-[12px] font-medium uppercase">Browse All Categories</span>
+        </a>
+
+        <ul class="flex items-center gap-8 ml-10 text-[15px] text-[#525252]">
+            <li
+                class="text-[#BE2229] font-medium border-b-2 border-[#BE2229] h-[56px] flex items-center cursor-pointer">
+            <li class="cursor-pointer hover:text-[#BE2229]"><a href="index.html">Home</a></li>
+            <li
+                class="text-[#BE2229] font-medium border-b-2 border-[#BE2229] h-[56px] flex items-center cursor-pointer">
+                <a href="#">All Products</a>
+            </li>
+            <li class="cursor-pointer hover:text-[#BE2229]"><a href="orders.html">Orders</a></li>
+            <li class="cursor-pointer hover:text-[#BE2229]">Knowledge Centre</li>
+            <li class="cursor-pointer hover:text-[#BE2229]">Contact Us</li>
+        </ul>
+
+        <div class="ml-auto h-[42px] cursor-pointer rounded-l-lg hover:opacity-90 transition">
+            <img src="assets/banners/customer-support.png" alt="Customer Support" class="h-full w-auto">
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-[280px] bg-white shadow-2xl z-50 hidden-menu md:hidden">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <img src="assets/images/header.png" alt="Logo" class="h-8">
+                <button id="close-menu" class="text-gray-500 text-2xl">&times;</button>
+            </div>
+            <ul class="space-y-6 text-[#525252] font-['Poppins'] text-lg">
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="categories.html">Categories</a>
+                </li>
+                <li class="flex items-center gap-3 text-[#BE2229] font-medium">
+                    <span class="w-2 h-2 bg-[#BE2229] rounded-full"></span>
+                    <a href="#">All Products</a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="orders.html">Your Orders</a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="#">Your Wishlist</a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-transparent rounded-full"></span>
+                    <a href="login.html">Your Account</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="bg-[#F4F6F6] min-h-screen">
+        <!-- Title Bar -->
+        <div class="w-full bg-transparent border-b border-[#E8E8E8] md:border-none">
+            <div class="max-w-[1440px] mx-auto px-4 lg:px-20 py-3 flex items-center justify-between">
+                <div class="flex items-center w-auto lg:min-w-[70px]">
+                    <a href="index.html" class="flex items-center text-[#1F1F1F] hover:text-[#BE2229] transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                    </a>
+                </div> <!-- Spacer to center title -->
+                <h1 class="flex-1 text-center text-[18px] lg:text-[22px] font-semibold text-[#1F1F1F] tracking-wide">All
+                    Products</h1>
+                <div class="flex items-center justify-end gap-2 w-auto lg:min-w-[70px]">
+                    <!-- Mobile Filter Icon Button -->
+                    <button id="mobile-filter-btn"
+                        class="lg:hidden w-[30px] h-[30px] flex items-center justify-center border border-[#DADADA] rounded bg-white">
+                        <img src="assets/icons/mobile/filter.svg" class="w-4 h-4" alt="Filter">
+                    </button>
+                    <!-- Desktop right spacer (same width as back arrow to keep title centered) -->
+                    <div class="hidden lg:block w-6"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Carousel -->
+        <div class="w-full bg-transparent md:pt-3 pb-0">
+            <div class="max-w-[1440px] mx-auto px-4 lg:px-20">
+                <div id="cat-carousel"
+                    class="flex gap-[10px] lg:gap-[12px] overflow-x-auto scroll-smooth snap-x py-2 cursor-grab select-none"
+                    style="scrollbar-width:none; -ms-overflow-style:none;">
+                    <!-- All Categories (active) -->
+                    <div
+                        class="cat-chip snap-start flex-shrink-0 w-[90px] h-[80px] lg:w-[230px] lg:h-[145px] bg-white rounded-[6px] lg:rounded-[8px] flex flex-col cursor-pointer overflow-hidden
+                        border border-[rgba(234,234,234,0.63)] shadow-[0px_2px_4px_rgba(0,0,0,0.25)] hover:border-[#BE2229] hover:shadow-md transition">
+                        <!-- Image fills top -->
+                        <div class="flex-1 flex items-center justify-center px-1 pt-1 lg:px-3 lg:pt-2 min-h-0">
+                            <img src="assets/images/deafult.png"
+                                class="max-h-full w-full object-contain mix-blend-multiply" alt="All Categories">
+                        </div>
+                        <!-- Label at bottom -->
+                        <div class="px-2 pb-1 lg:pb-2 text-center">
+                            <span class="text-[9px] lg:text-[18px] font-medium lg:leading-[27px] text-[#363636]"
+                                style="font-family: 'Poppins', sans-serif;">All Categories</span>
+                        </div>
+                    </div>
+                    <!-- Springs -->
+                    <div
+                        class="cat-chip snap-start flex-shrink-0 w-[90px] h-[80px] lg:w-[230px] lg:h-[145px] bg-white rounded-[6px] lg:rounded-[8px] flex flex-col cursor-pointer overflow-hidden
+                        border border-[rgba(234,234,234,0.63)] shadow-[0px_2px_4px_rgba(0,0,0,0.25)] hover:border-[#BE2229] hover:shadow-md transition">
+                        <div class="flex-1 flex items-center justify-center px-1 pt-1 lg:px-3 lg:pt-2 min-h-0">
+                            <img src="assets/images/deafult.png"
+                                class="max-h-full w-full object-contain mix-blend-multiply" alt="Springs">
+                        </div>
+                        <div class="px-2 pb-1 lg:pb-2 text-center">
+                            <span class="text-[9px] lg:text-[18px] font-medium lg:leading-[27px] text-[#363636]"
+                                style="font-family: 'Poppins', sans-serif;">Springs</span>
+                        </div>
+                    </div>
+                    <!-- Fasteners -->
+                    <div
+                        class="cat-chip snap-start flex-shrink-0 w-[90px] h-[80px] lg:w-[230px] lg:h-[145px] bg-white rounded-[6px] lg:rounded-[8px] flex flex-col cursor-pointer overflow-hidden
+                        border border-[rgba(234,234,234,0.63)] shadow-[0px_2px_4px_rgba(0,0,0,0.25)] hover:border-[#BE2229] hover:shadow-md transition">
+                        <div class="flex-1 flex items-center justify-center px-1 pt-1 lg:px-3 lg:pt-2 min-h-0">
+                            <img src="assets/images/deafult.png"
+                                class="max-h-full w-full object-contain mix-blend-multiply" alt="Fasteners">
+                        </div>
+                        <div class="px-2 pb-1 lg:pb-2 text-center">
+                            <span class="text-[9px] lg:text-[18px] font-medium lg:leading-[27px] text-[#363636]"
+                                style="font-family: 'Poppins', sans-serif;">Fasteners</span>
+                        </div>
+                    </div>
+                    <!-- Springs 2 -->
+                    <div
+                        class="cat-chip snap-start flex-shrink-0 w-[90px] h-[80px] lg:w-[230px] lg:h-[145px] bg-white rounded-[6px] lg:rounded-[8px] flex flex-col cursor-pointer overflow-hidden
+                        border border-[rgba(234,234,234,0.63)] shadow-[0px_2px_4px_rgba(0,0,0,0.25)] hover:border-[#BE2229] hover:shadow-md transition">
+                        <div class="flex-1 flex items-center justify-center px-1 pt-1 lg:px-3 lg:pt-2 min-h-0">
+                            <img src="assets/images/deafult.png"
+                                class="max-h-full w-full object-contain mix-blend-multiply" alt="Springs">
+                        </div>
+                        <div class="px-2 pb-1 lg:pb-2 text-center">
+                            <span class="text-[9px] lg:text-[18px] font-medium lg:leading-[27px] text-[#363636]"
+                                style="font-family: 'Poppins', sans-serif;">Springs</span>
+                        </div>
+                    </div>
+                    <!-- Circlips -->
+                    <div
+                        class="cat-chip snap-start flex-shrink-0 w-[90px] h-[80px] lg:w-[230px] lg:h-[145px] bg-white rounded-[6px] lg:rounded-[8px] flex flex-col cursor-pointer overflow-hidden
+                        border border-[rgba(234,234,234,0.63)] shadow-[0px_2px_4px_rgba(0,0,0,0.25)] hover:border-[#BE2229] hover:shadow-md transition">
+                        <div class="flex-1 flex items-center justify-center px-1 pt-1 lg:px-3 lg:pt-2 min-h-0">
+                            <img src="assets/images/deafult.png"
+                                class="max-h-full w-full object-contain mix-blend-multiply" alt="Circlips">
+                        </div>
+                        <div class="px-2 pb-1 lg:pb-2 text-center">
+                            <span class="text-[9px] lg:text-[18px] font-medium lg:leading-[27px] text-[#363636]"
+                                style="font-family: 'Poppins', sans-serif;">Circlips</span>
+                        </div>
+                    </div>
+                    <!-- Parallel Keys -->
+                    <div
+                        class="cat-chip snap-start flex-shrink-0 w-[90px] h-[80px] lg:w-[230px] lg:h-[145px] bg-white rounded-[6px] lg:rounded-[8px] flex flex-col cursor-pointer overflow-hidden
+                        border border-[rgba(234,234,234,0.63)] shadow-[0px_2px_4px_rgba(0,0,0,0.25)] hover:border-[#BE2229] hover:shadow-md transition">
+                        <div class="flex-1 flex items-center justify-center px-1 pt-1 lg:px-3 lg:pt-2 min-h-0">
+                            <img src="assets/images/deafult.png"
+                                class="max-h-full w-full object-contain mix-blend-multiply" alt="Parallel Keys">
+                        </div>
+                        <div class="px-2 pb-1 lg:pb-2 text-center">
+                            <span class="text-[9px] lg:text-[18px] font-medium lg:leading-[27px] text-[#363636]"
+                                style="font-family: 'Poppins', sans-serif;">Parallel Keys</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Divider aligned with content layout -->
+                <hr class="border-[rgba(0,0,0,0.28)] mt-3 mb-0">
+            </div>
+        </div>
+
+        <div class="w-full bg-transparent pt-4 lg:pt-5 pb-10">
+            <div class="max-w-[1440px] mx-auto px-4 lg:px-20 flex flex-col lg:flex-row gap-4 lg:gap-5 items-start">
+
+                <!-- Desktop Filter Sidebar -->
+                <!-- Mobile overlay logic switches hidden and translation -->
+                <div id="filter-sidebar"
+                    class="hidden lg:flex w-[260px] flex-shrink-0 bg-white rounded-[8px] flex-col p-4 shadow-sm z-[60] fixed inset-y-0 left-0 h-full overflow-y-auto lg:relative lg:h-auto lg:overflow-visible transition-transform transform -translate-x-full lg:translate-x-0">
+                    <!-- Filter Header -->
+                    <div class="flex items-center justify-between pb-3 border-b border-[#E8E8E8]">
+                        <span class="text-[#1F1F1F] text-[16px] font-bold">Filter</span>
+                        <div class="flex items-center gap-2">
+                            <button id="reset-filters" onclick="window.performReset()"
+                                class="text-[#1F1F1F] hover:text-gray-600 transition" title="Reset Filters">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                    </path>
+                                </svg>
+                            </button>
+                            <!-- Mobile Close Button -->
+                            <button id="close-filter-btn" class="lg:hidden text-[#1F1F1F] ml-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Categories section -->
+                    <div class="py-4 border-b border-[#E8E8E8]">
+                        <h3 class="text-[14px] font-bold text-[#1F1F1F] mb-3">Categories</h3>
+                        <div class="flex flex-col gap-2">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="all"
+                                    class="filter-category w-4 h-4 accent-[#BE2229] border-gray-300 rounded cursor-pointer">
+                                <span class="text-[13px] text-[#2B2B2B] font-medium">All</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="fasteners"
+                                    class="filter-category w-4 h-4 accent-[#BE2229] border-gray-300 rounded cursor-pointer">
+                                <span class="text-[13px] text-[#2B2B2B] font-medium">Fasteners</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="die-springs"
+                                    class="filter-category w-4 h-4 accent-[#BE2229] border-gray-300 rounded cursor-pointer">
+                                <span class="text-[13px] text-[#2B2B2B] font-medium">Die Springs</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="parallel-keys"
+                                    class="filter-category w-4 h-4 accent-[#BE2229] border-gray-300 rounded cursor-pointer">
+                                <span class="text-[13px] text-[#2B2B2B] font-medium">Parallel Keys</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="circlips"
+                                    class="filter-category w-4 h-4 accent-[#BE2229] border-gray-300 rounded cursor-pointer">
+                                <span class="text-[13px] text-[#2B2B2B] font-medium">Circlips</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="industrial-springs"
+                                    class="filter-category w-4 h-4 accent-[#BE2229] border-gray-300 rounded cursor-pointer">
+                                <span class="text-[13px] text-[#2B2B2B] font-medium">Industrial Springs</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="py-4 border-b border-[#E8E8E8]">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-[14px] font-bold text-[#1F1F1F]">Price Range</h3>
+                            <button id="reset-price" onclick="window.performReset()"
+                                class="text-[#1F1F1F] hover:text-[#BE2229] transition"><svg class="w-3 h-3" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                                    </path>
+                                </svg></button>
+                        </div>
+
+                        <div class="mt-4 px-1 relative w-full h-[30px] flex items-center">
+                            <!-- Background Track -->
+                            <div class="absolute w-full h-1 bg-[#888] rounded"></div>
+                            <!-- Active Track -->
+                            <div id="slider-track" class="absolute h-1 bg-[#BE2229] rounded"
+                                style="left: 0%; right: 0%;"></div>
+
+                            <!-- Invisible HTML5 Inputs -->
+                            <input type="range" id="price-min" min="0" max="5000" value="150"
+                                class="absolute w-full h-1 opacity-0 cursor-pointer z-30 range-slider-input">
+                            <input type="range" id="price-max" min="0" max="5000" value="1500"
+                                class="absolute w-full h-1 opacity-0 cursor-pointer z-30 range-slider-input">
+
+                            <!-- Fake thumbs for styling -->
+                            <div id="thumb-min"
+                                class="absolute w-[16px] h-[16px] bg-white rounded-full shadow-md flex items-center justify-center -translate-x-1/2 cursor-pointer z-10 pointer-events-none"
+                                style="left: 3%;">
+                                <div
+                                    class="absolute -top-6 px-1.5 py-0.5 bg-[#BE2229] text-white text-[9px] rounded font-medium whitespace-nowrap block">
+                                    ₹ <span id="label-min">150</span></div>
+                            </div>
+                            <div id="thumb-max"
+                                class="absolute w-[16px] h-[16px] bg-white rounded-full shadow-md flex items-center justify-center -translate-x-1/2 cursor-pointer z-10 pointer-events-none"
+                                style="left: 30%;">
+                                <div
+                                    class="absolute -top-6 px-1.5 py-0.5 bg-[#BE2229] text-white text-[9px] rounded font-medium whitespace-nowrap block">
+                                    ₹ <span id="label-max">1500</span></div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-2 mt-4">
+                            <div class="flex items-center justify-between text-[12px]">
+                                <span class="text-[#1F1F1F] font-medium">Minimum:</span>
+                                <div class="relative">
+                                    <span
+                                        class="absolute left-2 top-1/2 -translate-y-1/2 text-[#525252] text-[11px]">₹</span>
+                                    <input type="number" id="input-min" value="150"
+                                        class="w-[70px] h-[22px] border border-[#DADADA] bg-[#EDEDED] rounded pl-5 pr-1 outline-none text-[#1F1F1F] text-[11px] font-medium appearance-none">
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between text-[12px]">
+                                <span class="text-[#1F1F1F] font-medium">Maximum:</span>
+                                <div class="relative">
+                                    <span
+                                        class="absolute left-2 top-1/2 -translate-y-1/2 text-[#525252] text-[11px]">₹</span>
+                                    <input type="number" id="input-max" value="1500"
+                                        class="w-[70px] h-[22px] border border-[#DADADA] bg-[#EDEDED] rounded pl-5 pr-1 outline-none text-[#1F1F1F] text-[11px] font-medium appearance-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="py-4">
+                        <h3 class="text-[14px] font-bold text-[#1F1F1F] mb-3">Availability</h3>
+                        <div class="flex flex-col gap-2">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="in-stock"
+                                    class="filter-availability w-4 h-4 accent-[#BE2229] border-gray-300 rounded cursor-pointer">
+                                <span class="text-[13px] text-[#2B2B2B] font-medium">In Stock</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="bulk-available"
+                                    class="filter-availability w-4 h-4 accent-[#BE2229] border-gray-300 rounded cursor-pointer">
+                                <span class="text-[13px] text-[#2B2B2B] font-medium">Bulk Available</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Grid Right Side -->
+                <div class="flex-1 w-full flex flex-col gap-4">
+                    <!-- Top sorting and pagination (Desktop & Mobile) -->
+                    <div class="flex items-center justify-between w-full mb-3">
+                        <div class="flex items-center gap-1 text-[13px] sm:text-[14px] text-[#1F1F1F]">
+                            <span class="font-medium text-[#1F1F1F]">Sort By:</span>
+                            <span
+                                class="underline underline-offset-2 cursor-pointer hover:text-[#BE2229] font-medium text-[#1F1F1F]">Newest</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-[#1F1F1F] text-[13px] font-medium">
+                            <button
+                                class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] bg-white border border-[#E8E8E8] rounded flex items-center justify-center text-[#1F1F1F] hover:bg-gray-50 transition shadow-sm">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <span class="px-1 text-[#525252] text-[12px] sm:text-[14px]">1–6 of 24</span>
+                            <button
+                                class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] bg-white border border-[#E8E8E8] rounded flex items-center justify-center text-[#1F1F1F] hover:bg-gray-50 transition shadow-sm">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Grid: 2 cols mobile, 5 cols desktop -->
+                    <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4 w-full" id="product-grid">
+
+                        <!-- Product 1 -->
+                        <div class="fo-card product-card" data-category="die-springs" data-price="311.52">
+                            <span class="fo-badge">Save 22%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Die Spring Red"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Die Spring OD 10mm L
+                                    25mm Red</a>
+                                <div class="fo-pricing"><span class="fo-price">₹311.52</span><span
+                                        class="fo-old-price">₹400.90</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 2 -->
+                        <div class="fo-card product-card" data-category="fasteners" data-price="165.00">
+                            <span class="fo-badge">Save 15%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Fastener Bolt"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Hex Bolt M8 x 40mm Grade
+                                    8.8</a>
+                                <div class="fo-pricing"><span class="fo-price">₹165.00</span><span
+                                        class="fo-old-price">₹194.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 3 -->
+                        <div class="fo-card product-card" data-category="circlips" data-price="210.00">
+                            <span class="fo-badge">Save 12%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Circlip"><button class="fo-wishlist"><img src="assets/icons/mobile/star.svg"
+                                        alt="Wishlist" class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Internal Circlip 25mm
+                                    DIN 472</a>
+                                <div class="fo-pricing"><span class="fo-price">₹210.00</span><span
+                                        class="fo-old-price">₹238.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 4 -->
+                        <div class="fo-card product-card" data-category="parallel-keys" data-price="185.00">
+                            <span class="fo-badge">Save 10%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Parallel Key"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Parallel Key 8x7x50mm
+                                    DIN 6885</a>
+                                <div class="fo-pricing"><span class="fo-price">₹185.00</span><span
+                                        class="fo-old-price">₹205.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 5 -->
+                        <div class="fo-card product-card" data-category="industrial-springs" data-price="480.00">
+                            <span class="fo-badge">Save 20%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Industrial Spring"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Compression Spring 50mm
+                                    OD 100mm L</a>
+                                <div class="fo-pricing"><span class="fo-price">₹480.00</span><span
+                                        class="fo-old-price">₹600.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 6 -->
+                        <div class="fo-card product-card" data-category="die-springs" data-price="540.00">
+                            <span class="fo-badge">Save 25%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Die Spring Blue"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Die Spring OD 20mm L
+                                    50mm Blue</a>
+                                <div class="fo-pricing"><span class="fo-price">₹540.00</span><span
+                                        class="fo-old-price">₹720.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 7 -->
+                        <div class="fo-card product-card" data-category="fasteners" data-price="290.00">
+                            <span class="fo-badge">Save 18%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Socket Screw"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Socket Head Cap Screw
+                                    M10x50</a>
+                                <div class="fo-pricing"><span class="fo-price">₹290.00</span><span
+                                        class="fo-old-price">₹354.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 8 -->
+                        <div class="fo-card product-card" data-category="circlips" data-price="155.00">
+                            <span class="fo-badge">Save 8%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="External Circlip"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">External Circlip 20mm
+                                    DIN 471</a>
+                                <div class="fo-pricing"><span class="fo-price">₹155.00</span><span
+                                        class="fo-old-price">₹168.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 9 -->
+                        <div class="fo-card product-card" data-category="parallel-keys" data-price="340.00">
+                            <span class="fo-badge">Save 15%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Parallel Key Set"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Parallel Key Set
+                                    10x8x80mm</a>
+                                <div class="fo-pricing"><span class="fo-price">₹340.00</span><span
+                                        class="fo-old-price">₹400.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 10 -->
+                        <div class="fo-card product-card" data-category="industrial-springs" data-price="720.00">
+                            <span class="fo-badge">Save 28%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Extension Spring"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Extension Spring 30mm OD
+                                    80mm L</a>
+                                <div class="fo-pricing"><span class="fo-price">₹720.00</span><span
+                                        class="fo-old-price">₹1000.00</span></div><button class="fo-cart-btn">Add to
+                                    Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 11 -->
+                        <div class="fo-card product-card" data-category="die-springs" data-price="390.00">
+                            <span class="fo-badge">Save 20%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Die Spring Green"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Die Spring OD 15mm L
+                                    40mm Green</a>
+                                <div class="fo-pricing"><span class="fo-price">₹390.00</span><span
+                                        class="fo-old-price">₹488.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 12 -->
+                        <div class="fo-card product-card" data-category="fasteners" data-price="620.00">
+                            <span class="fo-badge">Save 22%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Stud Bolt"><button class="fo-wishlist"><img src="assets/icons/mobile/star.svg"
+                                        alt="Wishlist" class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Stud Bolt M12x100mm DIN
+                                    975</a>
+                                <div class="fo-pricing"><span class="fo-price">₹620.00</span><span
+                                        class="fo-old-price">₹795.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 13 -->
+                        <div class="fo-card product-card" data-category="circlips" data-price="450.00">
+                            <span class="fo-badge">Save 18%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Circlip Set"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Circlip Assorted Set
+                                    10-50mm</a>
+                                <div class="fo-pricing"><span class="fo-price">₹450.00</span><span
+                                        class="fo-old-price">₹549.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 14 -->
+                        <div class="fo-card product-card" data-category="parallel-keys" data-price="890.00">
+                            <span class="fo-badge">Save 30%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Key Stock"><button class="fo-wishlist"><img src="assets/icons/mobile/star.svg"
+                                        alt="Wishlist" class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Key Stock Bar
+                                    12x8x1000mm</a>
+                                <div class="fo-pricing"><span class="fo-price">₹890.00</span><span
+                                        class="fo-old-price">₹1270.00</span></div><button class="fo-cart-btn">Add to
+                                    Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 15 -->
+                        <div class="fo-card product-card" data-category="industrial-springs" data-price="1050.00">
+                            <span class="fo-badge">Save 25%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Heavy Spring"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Heavy Duty Coil Spring
+                                    80mm OD</a>
+                                <div class="fo-pricing"><span class="fo-price">₹1,050.00</span><span
+                                        class="fo-old-price">₹1,400.00</span></div><button class="fo-cart-btn">Add to
+                                    Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 16 -->
+                        <div class="fo-card product-card" data-category="die-springs" data-price="265.00">
+                            <span class="fo-badge">Save 12%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Die Spring Yellow"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Die Spring OD 12mm L
+                                    32mm Yellow</a>
+                                <div class="fo-pricing"><span class="fo-price">₹265.00</span><span
+                                        class="fo-old-price">₹302.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 17 -->
+                        <div class="fo-card product-card" data-category="fasteners" data-price="780.00">
+                            <span class="fo-badge">Save 20%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Anchor Bolt"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Anchor Bolt M16 x
+                                    200mm</a>
+                                <div class="fo-pricing"><span class="fo-price">₹780.00</span><span
+                                        class="fo-old-price">₹975.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 18 -->
+                        <div class="fo-card product-card" data-category="circlips" data-price="320.00">
+                            <span class="fo-badge">Save 16%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Snap Ring"><button class="fo-wishlist"><img src="assets/icons/mobile/star.svg"
+                                        alt="Wishlist" class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Snap Ring E-Type 30mm
+                                    Stainless</a>
+                                <div class="fo-pricing"><span class="fo-price">₹320.00</span><span
+                                        class="fo-old-price">₹381.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 19 -->
+                        <div class="fo-card product-card" data-category="parallel-keys" data-price="560.00">
+                            <span class="fo-badge">Save 20%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Woodruff Key"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Woodruff Key 6x9mm DIN
+                                    6888</a>
+                                <div class="fo-pricing"><span class="fo-price">₹560.00</span><span
+                                        class="fo-old-price">₹700.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 20 -->
+                        <div class="fo-card product-card" data-category="industrial-springs" data-price="1250.00">
+                            <span class="fo-badge">Save 30%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Torsion Spring"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Torsion Spring 40mm OD
+                                    60mm L</a>
+                                <div class="fo-pricing"><span class="fo-price">₹1,250.00</span><span
+                                        class="fo-old-price">₹1,785.00</span></div><button class="fo-cart-btn">Add to
+                                    Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 21 -->
+                        <div class="fo-card product-card" data-category="die-springs" data-price="660.00">
+                            <span class="fo-badge">Save 18%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Die Spring Brown"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Die Spring OD 30mm L
+                                    75mm Brown</a>
+                                <div class="fo-pricing"><span class="fo-price">₹660.00</span><span
+                                        class="fo-old-price">₹805.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 22 -->
+                        <div class="fo-card product-card" data-category="fasteners" data-price="420.00">
+                            <span class="fo-badge">Save 14%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Nut"><button class="fo-wishlist"><img src="assets/icons/mobile/star.svg"
+                                        alt="Wishlist" class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Hex Flange Nut M12 DIN
+                                    6923</a>
+                                <div class="fo-pricing"><span class="fo-price">₹420.00</span><span
+                                        class="fo-old-price">₹488.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 23 -->
+                        <div class="fo-card product-card" data-category="circlips" data-price="580.00">
+                            <span class="fo-badge">Save 20%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Retaining Ring"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Retaining Ring 50mm
+                                    Heavy Duty</a>
+                                <div class="fo-pricing"><span class="fo-price">₹580.00</span><span
+                                        class="fo-old-price">₹725.00</span></div><button class="fo-cart-btn">Add to Cart
+                                    <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 24 -->
+                        <div class="fo-card product-card" data-category="parallel-keys" data-price="1100.00">
+                            <span class="fo-badge">Save 26%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Gib Head Key"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Gib Head Taper Key
+                                    16x10x100mm</a>
+                                <div class="fo-pricing"><span class="fo-price">₹1,100.00</span><span
+                                        class="fo-old-price">₹1,486.00</span></div><button class="fo-cart-btn">Add to
+                                    Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+                        <!-- Product 25 -->
+                        <div class="fo-card product-card" data-category="industrial-springs" data-price="1450.00">
+                            <span class="fo-badge">Save 32%</span>
+                            <a href="product.html" class="fo-image-box"><img src="assets/images/deafult.png"
+                                    alt="Disc Spring"><button class="fo-wishlist"><img
+                                        src="assets/icons/mobile/star.svg" alt="Wishlist"
+                                        class="w-6 h-6 wishlist-icon"></button></a>
+                            <div class="fo-details"><a href="product.html" class="fo-prod-name">Belleville Disc Spring
+                                    100mm OD</a>
+                                <div class="fo-pricing"><span class="fo-price">₹1,450.00</span><span
+                                        class="fo-old-price">₹2,133.00</span></div><button class="fo-cart-btn">Add to
+                                    Cart <img src="assets/icons/mobile/addtocart.svg" alt="Cart"
+                                        class="w-4 h-4 ml-2"></button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom Pagination -->
+                    <div
+                        class="flex items-center justify-end w-full gap-2 text-[#1F1F1F] text-[13px] font-medium mt-4 lg:mt-6">
+                        <button
+                            class="w-[24px] h-[24px] bg-white border border-[#E8E8E8] rounded-[4px] flex items-center justify-center text-[#1F1F1F] hover:bg-gray-50 transition shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <span class="px-1">1–6 of 24</span>
+                        <button
+                            class="w-[24px] h-[24px] bg-white border border-[#E8E8E8] rounded-[4px] flex items-center justify-center text-[#1F1F1F] hover:bg-gray-50 transition shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Product Banner — spans full content width below sidebar + grid -->
+            <div class="max-w-[1440px] mx-auto px-4 lg:px-20 pb-10">
+                <div
+                    class="w-full mt-6 rounded-[8px] lg:rounded-[10px] border border-[#C8C8C8] bg-[#D9D9D9] flex items-center justify-center overflow-hidden h-[200px] lg:h-[150px]">
+                    <img src="assets/images/deafult.png" alt="Support Product Banner"
+                        class="max-h-full max-w-full object-contain p-6 lg:p-8 opacity-60">
+                </div>
+            </div>
+
+
+            <!-- Mobile Filter Overlay Background -->
+            <div id="filter-overlay" class="fixed inset-0 bg-black/50 z-[55] hidden lg:hidden"></div>
+    </main>
+
+    <!-- New Responsive Footer -->
+    <footer class="bg-white pt-10 pb-5 border-t border-gray-200 mt-10 relative">
+        <div class="max-w-[1440px] mx-auto px-5 md:px-[80px]">
+
+            <!-- Desktop Layout -->
+            <div class="hidden md:flex flex-row justify-between items-start gap-8 mb-10">
+                <!-- Col 1: Brand & Contact -->
+                <div class="flex flex-col gap-4 w-[253px]">
+                    <img src="assets/images/header.png" alt="Springwala" class="w-[200px]">
+                    <div class="w-full h-[1px] bg-[#525252] my-2"></div>
+                    <div class="flex flex-col gap-2 text-[#2B2B2B] text-[16px] font-['Inter']">
+                        <p>Mumbai, Maharashtra (India)</p>
+                        <p>Phone: +91 8879 241085</p>
+                        <p>Email: support@springwala.in</p>
+                    </div>
+                </div>
+
+                <!-- Links Cols -->
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">Home</a>
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">About Us</a>
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">Contact Us</a>
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">Delivery & Shipping</a>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">My Account</a>
+                    <a href="orders.html" class="text-[#525252] text-[15px] hover:text-[#BE2229]">My Orders</a>
+                    <a href="cart.html" class="text-[#525252] text-[15px] hover:text-[#BE2229]">My Cart</a>
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">Saved Items</a>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">Knowledge Section</a>
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">Sell on Springwala</a>
+                    <a href="#" class="text-[#525252] text-[15px] hover:text-[#BE2229]">Career</a>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="flex flex-col gap-4 w-[300px]">
+                    <h3 class="font-['Poppins'] font-semibold text-[18px]">Stay Updated with Springwala</h3>
+                    <p class="text-[14px]">Get E-mail updates about latest shop and special offers</p>
+                    <div class="flex h-[35px] w-full">
+                        <input type="email" placeholder="Enter your email here..."
+                            class="flex-1 border border-[#BE2229] rounded-l-[5px] px-3 outline-none text-[14px]">
+                        <button
+                            class="bg-[#BE2229] text-white px-4 rounded-r-[5px] font-medium text-[14px]">Subscribe</button>
+                    </div>
+                    <!-- Social Icons -->
+                    <div class="flex gap-4 mt-2">
+                        <a href="#"><img src="assets/icons/mobile/facebook.svg" class="w-6 h-6 cursor-pointer"></a>
+                        <a href="#"><img src="assets/icons/mobile/pinterest.svg" class="w-6 h-6 cursor-pointer"></a>
+                        <a href="#"><img src="assets/icons/mobile/linkedin.svg" class="w-6 h-6 cursor-pointer"></a>
+                        <a href="#"><img src="assets/icons/mobile/instagram.svg" class="w-6 h-6 cursor-pointer"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="md:hidden flex flex-col items-center text-center gap-6 pb-20 relative">
+                <img src="assets/images/header.png" alt="Springwala" class="w-[200px] mb-2">
+
+                <!-- Line 14 -->
+                <div class="w-[90%] h-[1px] bg-[#525252]"></div>
+
+                <div class="flex flex-col gap-2 text-[#2B2B2B] text-[16px] font-['Inter']">
+                    <p>Mumbai, Maharashtra (India)</p>
+                    <p>Phone: +91 8879 241085</p>
+                    <p>Email: support@springwala.in</p>
+                </div>
+
+                <!-- Line 18 -->
+                <div class="w-[90%] h-[1px] bg-[#525252] opacity-30"></div>
+
+                <!-- Newsletter -->
+                <div class="flex flex-col items-center gap-3 w-full px-2">
+                    <h3 class="font-['Poppins'] font-semibold text-[16px] sm:text-[18px] text-center">Join Our
+                        Newsletter Now</h3>
+                    <p class="text-[12px] sm:text-[14px] text-center">Get E-mail updates about latest shop and special
+                        offers</p>
+                    <div class="flex h-[35px] w-full max-w-[350px]">
+                        <input type="email" placeholder="Enter your email here..."
+                            class="flex-1 min-w-0 border border-[#BE2229] rounded-l-[5px] px-2 sm:px-3 outline-none text-[13px] sm:text-[14px]">
+                        <button
+                            class="bg-[#BE2229] text-white px-3 sm:px-4 rounded-r-[5px] font-medium text-[13px] sm:text-[14px] whitespace-nowrap">Subscribe</button>
+                    </div>
+                    <div class="flex gap-4 mt-2 justify-center">
+                        <a href="#"><img src="assets/icons/mobile/facebook.svg" class="w-6 h-6"></a>
+                        <a href="#"><img src="assets/icons/mobile/pinterest.svg" class="w-6 h-6"></a>
+                        <a href="#"><img src="assets/icons/mobile/linkedin.svg" class="w-6 h-6"></a>
+                        <a href="#"><img src="assets/icons/mobile/instagram.svg" class="w-6 h-6"></a>
+                    </div>
+                </div>
+
+                <!-- Line 19 -->
+                <div class="w-[90%] h-[1px] bg-[#525252] opacity-30"></div>
+
+                <!-- Links Groups -->
+                <div
+                    class="flex flex-row justify-between w-full px-2 sm:px-8 mt-4 text-[13px] sm:text-[15px] text-[#525252]">
+                    <div class="flex flex-col gap-4 text-left">
+                        <a href="#">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Delivery & Shipping</a>
+                    </div>
+
+                    <div class="flex flex-col gap-4 text-right">
+                        <a href="login.html">My Account</a>
+                        <a href="orders.html">My Orders</a>
+                        <a href="cart.html">My Cart</a>
+                        <a href="#">Saved Items</a>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 text-[#525252] mt-4 flex-wrap justify-center">
+                    <a href="#">Knowledge Section</a>
+                    <a href="#">Sell on Springwala</a>
+                    <a href="#">Career</a>
+                </div>
+
+                <!-- Bottom Links -->
+                <div class="w-full h-[1px] bg-[#525252] mt-4 opacity-50"></div>
+
+                <div class="flex flex-wrap gap-x-6 gap-y-3 justify-center text-[15px] text-[#525252] max-w-[350px]">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Return Policy</a>
+                    <a href="#">Vendor Agreement</a>
+                    <a href="#">GST Compliance</a>
+                    <a href="#">Data Protection</a>
+                </div>
+
+                <p class="text-[14px] mt-2 mb-0 md:mb-0">Copyright © 2026 All rights reserved</p>
+            </div>
+
+            <!-- Desktop Bottom Divider & Links -->
+            <div class="hidden md:block w-full h-[1px] bg-[#525252] my-6"></div>
+            <div class="hidden md:flex justify-center gap-8 text-[14px] text-[#666] mb-2">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Return Policy</a>
+                <a href="#">Vendor Agreement</a>
+                <a href="#">GST Compliance</a>
+                <a href="#">Data Protection</a>
+            </div>
+            <div class="hidden md:block text-center text-[14px] mb-8">Copyright © 2026 All rights reserved</div>
+
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Bar -->
+    <nav class="mobile-navbar">
+        <div class="nav-item active">
+            <img src="assets/icons/mobile/home-red.svg" alt="Home">
+            <div class="active-indicator"></div>
+        </div>
+        <a href="categories.html" class="nav-item cursor-pointer">
+            <img src="assets/icons/mobile/categories.svg" alt="Categories">
+        </a>
+        <a href="orders.html" class="nav-item cursor-pointer">
+            <img src="assets/icons/mobile/orders.svg" alt="Orders">
+        </a>
+        <a href="login.html" class="nav-item cursor-pointer">
+            <img src="assets/icons/mobile/profile.svg" alt="Profile">
+        </a>
+    </nav>
+
+
+    <script src="assets/js/script.js"></script>
+
+    <!-- UI Interaction and Filtering Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                // Mobile Filter Drawer Logic
+                const mobileFilterBtn = document.getElementById('mobile-filter-btn');
+                const closeFilterBtn = document.getElementById('close-filter-btn');
+                const filterSidebar = document.getElementById('filter-sidebar');
+                const filterOverlay = document.getElementById('filter-overlay');
+
+                function toggleFilter() {
+                    const isHidden = filterSidebar.classList.contains('hidden');
+                    if (isHidden) {
+                        filterSidebar.classList.remove('hidden');
+                        filterOverlay.classList.remove('hidden');
+                        // Small delay to allow display block to render before CSS transition
+                        setTimeout(() => {
+                            filterSidebar.classList.remove('-translate-x-full');
+                            filterSidebar.classList.add('translate-x-0');
+                        }, 10);
+                    } else {
+                        filterSidebar.classList.remove('translate-x-0');
+                        filterSidebar.classList.add('-translate-x-full');
+                        setTimeout(() => {
+                            filterSidebar.classList.add('hidden');
+                            filterOverlay.classList.add('hidden');
+                        }, 300); // 300ms matches typical tailwind transition duration
+                    }
+                }
+
+                mobileFilterBtn?.addEventListener('click', toggleFilter);
+                closeFilterBtn?.addEventListener('click', toggleFilter);
+                filterOverlay?.addEventListener('click', toggleFilter);
+
+                // Double Range Slider Visuals and Sync Logic
+                const minSlider = document.getElementById('price-min');
+                const maxSlider = document.getElementById('price-max');
+                const minInput = document.getElementById('input-min');
+                const maxInput = document.getElementById('input-max');
+                const track = document.getElementById('slider-track');
+                const thumbMin = document.getElementById('thumb-min');
+                const thumbMax = document.getElementById('thumb-max');
+                const labelMin = document.getElementById('label-min');
+                const labelMax = document.getElementById('label-max');
+
+                function updateSliders(source) {
+                    if (!minSlider || !maxSlider) return;
+
+                    let minVal = parseInt(minSlider.value);
+                    let maxVal = parseInt(maxSlider.value);
+                    const maxAllowed = parseInt(maxSlider.max);
+
+                    // If updated from text inputs
+                    if (source === 'input') {
+                        minVal = parseInt(minInput.value) || 0;
+                        maxVal = parseInt(maxInput.value) || 0;
+                    }
+
+                    // Prevent crossing
+                    if (minVal > maxVal - 10) {
+                        if (source === 'min' || source === 'input') {
+                            minVal = maxVal - 10;
+                        } else {
+                            maxVal = minVal + 10;
+                        }
+                    }
+
+                    // Sync values across all elements
+                    minSlider.value = minVal;
+                    maxSlider.value = maxVal;
+                    minInput.value = minVal;
+                    maxInput.value = maxVal;
+                    if (labelMin) labelMin.innerText = minVal;
+                    if (labelMax) labelMax.innerText = maxVal;
+
+                    // Update Visual Track and Thumbs
+                    const minPercent = (minVal / maxAllowed) * 100;
+                    const maxPercent = (maxVal / maxAllowed) * 100;
+
+                    if (track) {
+                        track.style.left = minPercent + '%';
+                        track.style.right = (100 - maxPercent) + '%';
+                    }
+                    if (thumbMin) thumbMin.style.left = minPercent + '%';
+                    if (thumbMax) thumbMax.style.left = maxPercent + '%';
+
+                    // Adjust z-index of range inputs to prioritize the highest one when they overlap
+                    if (minVal > (maxAllowed - 500)) {
+                        minSlider.style.zIndex = '30';
+                    } else {
+                        minSlider.style.zIndex = '20';
+                    }
+
+                    filterProducts(); // trigger filtering
+                }
+
+                minSlider?.addEventListener('input', () => updateSliders('min'));
+                maxSlider?.addEventListener('input', () => updateSliders('max'));
+                minInput?.addEventListener('change', () => updateSliders('input'));
+                maxInput?.addEventListener('change', () => updateSliders('input'));
+
+                // Filter Feature Logic
+                const categoryCheckboxes = document.querySelectorAll('.filter-category');
+                const resetBtn = document.getElementById('reset-filters');
+                const products = document.querySelectorAll('.product-card');
+
+                // Initialize sliders
+                updateSliders('init');
+
+                function filterProducts() {
+                    // Get active categories
+                    let activeCategories = [];
+                    categoryCheckboxes.forEach(cb => {
+                        if (cb.checked) activeCategories.push(cb.value);
+                    });
+
+                    // Get current price range
+                    const currentMin = parseInt(minInput.value);
+                    const currentMax = parseInt(maxInput.value);
+
+                    // Test if 'All' is selected or no categories are selected (show all categories)
+                    const showAllCategories = activeCategories.includes('all') || activeCategories.length === 0;
+
+                    products.forEach(product => {
+                        const prodCategory = product.getAttribute('data-category');
+                        const prodPrice = parseFloat(product.getAttribute('data-price'));
+
+                        let categoryMatch = showAllCategories || activeCategories.includes(prodCategory);
+                        let priceMatch = (prodPrice >= currentMin && prodPrice <= currentMax);
+
+                        if (categoryMatch && priceMatch) {
+                            product.style.display = "flex";
+                        } else {
+                            product.style.display = "none";
+                        }
+                    });
+                }
+
+                // Attach listeners to checkboxes
+                categoryCheckboxes.forEach(cb => {
+                    cb.addEventListener('change', filterProducts);
+                });
+
+                // Reset Filter Logic
+                window.performReset = function () {
+                    document.querySelectorAll('.filter-category, .filter-availability').forEach(cb => cb.checked = false);
+                    if (minSlider) minSlider.value = 150;
+                    if (maxSlider) maxSlider.value = 1500;
+                    if (minInput) minInput.value = 150;
+                    if (maxInput) maxInput.value = 1500;
+                    updateSliders('init');
+                    filterProducts();
+                };
+
+
+                // Category Chips active state click
+                const catChips = document.querySelectorAll('.cat-chip');
+                catChips.forEach(chip => {
+                    chip.addEventListener('click', () => {
+                        catChips.forEach(c => {
+                            c.classList.remove('border-[#BE2229]');
+                            c.classList.add('border-transparent');
+                        });
+                        chip.classList.remove('border-transparent');
+                        chip.classList.add('border-[#BE2229]');
+                    });
+                });
+
+                // Initial filter run
+                filterProducts();
+
+            } catch (err) {
+                const debugDiv = document.getElementById('debug-text');
+                if (debugDiv) {
+                    debugDiv.innerText = "GLOBAL ERROR: " + err.message + "\n" + err.stack;
+                }
+            }
+        });
+
+        // ── Category Carousel: mouse-drag scroll ──────────────────────────────
+        (function () {
+            const carousel = document.getElementById('cat-carousel');
+            if (!carousel) return;
+
+            let isDown = false, startX, scrollLeft;
+
+            carousel.addEventListener('mousedown', function (e) {
+                isDown = true;
+                carousel.classList.add('cursor-grabbing');
+                carousel.classList.remove('cursor-grab');
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+                e.preventDefault();
+            });
+
+            carousel.addEventListener('mouseleave', function () {
+                isDown = false;
+                carousel.classList.remove('cursor-grabbing');
+                carousel.classList.add('cursor-grab');
+            });
+
+            carousel.addEventListener('mouseup', function () {
+                isDown = false;
+                carousel.classList.remove('cursor-grabbing');
+                carousel.classList.add('cursor-grab');
+            });
+
+            carousel.addEventListener('mousemove', function (e) {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+        })();
+    </script>
+</body>
+
+</html>
