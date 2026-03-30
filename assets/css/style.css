@@ -521,6 +521,7 @@ body {
     margin-bottom: 8px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     /* Limit to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -630,54 +631,6 @@ body {
 
 
 
-/* =========================================
-   MOBILE RESPONSIVE (Max-width 768px)
-   ========================================= */
-@media (max-width: 768px) {
-
-    .fo-container {
-        padding: 0 16px;
-    }
-
-    /* Adjust Header */
-    .fo-header {
-        margin-bottom: 5px;
-    }
-
-    .fo-title {
-        font-size: 18px;
-    }
-
-    /* Change Grid to 2 Columns */
-    .fo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 items per row */
-        gap: 10px;
-    }
-
-    /* Adjust Card spacing for mobile */
-    .fo-card {
-        padding: 8px;
-    }
-
-    .fo-image-box {
-        height: 120px;
-        /* Slightly smaller image area */
-    }
-
-    .fo-prod-name {
-        font-size: 12px;
-    }
-
-    .fo-price {
-        font-size: 14px;
-    }
-
-    .fo-cart-btn {
-        font-size: 12px;
-        padding: 6px 0;
-    }
-}
 
 /* --- Knowledge Section Styles --- */
 .knowledge-section {
@@ -795,6 +748,7 @@ body {
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     /* Limit to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -955,11 +909,11 @@ ul {
 }
 
 .mobile-only {
-    display: block;
+    display: none;
 }
 
 .desktop-only {
-    display: none;
+    display: block;
 }
 
 /* =========================================
