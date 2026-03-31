@@ -191,46 +191,47 @@
     </aside>
 
     <!-- Main Content Area -->
+    <!-- Main Content Area -->
     <main class="flex-1 flex flex-col min-w-0 pb-[100px] relative">
-
-        <!-- Header Container -->
-        <header
-            class="w-full px-4 sm:px-6 lg:px-8 xl:px-10 pt-6 xl:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            
-            <div class="flex items-center gap-4 w-full md:w-auto flex-1">
-                <!-- Mobile Hamburger -->
-                <button id="open-sidebar" class="xl:hidden p-2 -ml-2 text-gray-600 hover:text-black shrink-0">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+    <main class="flex-1 flex flex-col min-w-0 pb-[100px] relative">
+        <!-- Persistent Top Bar (Mobile Sticky / Desktop Single Row) -->
+        <div class="sticky top-0 z-30 bg-[#F2F2F2] md:static md:bg-transparent w-full px-4 sm:px-6 lg:px-8 xl:px-10 h-[70px] md:h-auto md:pt-6 xl:pt-8 flex items-center justify-between transition-all">
+            <div class="flex items-center gap-4 flex-1">
+                <button id="open-sidebar" class="xl:hidden p-2 -ml-2 text-gray-600 hover:text-black shrink-0 font-bold flex items-center justify-center">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
-                <h1 class="font-['Roboto'] text-[24px] sm:text-[26px] leading-[30px] text-black shrink-0">Master Admin
-                </h1>
+                <h2 class="font-['Roboto'] font-medium text-[24px] sm:text-[26px] leading-[30px] text-black shrink-0 flex items-center">Master Admin</h2>
 
-                <!-- Search Bar -->
-                <div
-                    class="hidden sm:flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full max-w-[400px] xl:w-[532px] h-[43px] px-3 ml-2 md:ml-6 shrink">
+                <!-- Desktop Search (Hidden on Mobile) -->
+                <div class="hidden sm:flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full max-w-[400px] xl:w-[532px] h-[43px] px-3 ml-2 md:ml-6 shrink">
                     <img src="../../assets/icons/admin/search.svg" alt="Search" class="w-5 h-5 mr-2 opacity-60">
-                    <input type="text" placeholder="Search orders, products, customers....."
-                        class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] sm:text-[15px] bg-transparent">
+                    <input type="text" placeholder="Search orders, products, customers....." class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] sm:text-[15px] bg-transparent">
                 </div>
             </div>
 
-            <!-- Mobile Search (Visible only below SM) -->
-            <div
-                class="sm:hidden flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full h-[43px] px-3 shrink">
+            <!-- Desktop Action Buttons (Visible md+) -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="add-product.html" class="bg-[#BE2229] hover:bg-red-800 text-white hover:text-white font-['Poppins'] font-medium text-[15px] h-[43px] px-4 rounded-[7px] flex items-center justify-center transition whitespace-nowrap">+ Add Product</a>
+                <a href="../oders.html" class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[15px] h-[43px] px-4 rounded-[7px] items-center justify-center transition whitespace-nowrap">View Orders</a>
+                <button class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[15px] h-[43px] px-4 rounded-[7px] items-center justify-center transition whitespace-nowrap">Vendors</button>
+            </div>
+        </div>
+
+        <!-- Mobile Scrollable Section (Visible only on mobile below md) -->
+        <div class="md:hidden px-4 sm:px-6 flex flex-col gap-4 mt-2">
+            <!-- Mobile Search -->
+            <div class="sm:hidden flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full h-[43px] px-3 shrink">
                 <img src="../../assets/icons/admin/search.svg" alt="Search" class="w-5 h-5 mr-2 opacity-60">
-                <input type="text" placeholder="Search orders, products, customers....."
-                    class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] bg-transparent">
+                <input type="text" placeholder="Search orders, products, customers....." class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] bg-transparent">
             </div>
 
-            <div class="flex items-center gap-3 self-end md:self-auto flex-wrap w-full md:w-auto mt-2 md:mt-0 justify-between md:justify-end">
-                <a href="add-product.html" class="bg-[#BE2229] hover:bg-red-800 text-white hover:text-white font-['Poppins'] font-medium text-[13px] sm:text-[15px] h-[40px] sm:h-[43px] flex-1 md:flex-none px-2 sm:px-4 rounded-[7px] flex items-center justify-center transition whitespace-nowrap">+ Add Product</a>
-                <a href="../oders.html" class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] sm:text-[15px] h-[40px] sm:h-[43px] flex-1 md:flex-none px-2 sm:px-4 rounded-[7px] items-center justify-center transition whitespace-nowrap">View Orders</a>
-                <button class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] sm:text-[15px] h-[40px] sm:h-[43px] flex-1 md:flex-none px-2 sm:px-4 rounded-[7px] items-center justify-center transition whitespace-nowrap">Vendors</button>
+            <!-- Mobile Action Buttons -->
+            <div class="flex items-center gap-3 justify-between">
+                <a href="add-product.html" class="bg-[#BE2229] hover:bg-red-800 text-white hover:text-white font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 flex items-center justify-center transition whitespace-nowrap">+ Add Product</a>
+                <a href="../oders.html" class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 items-center justify-center transition whitespace-nowrap text-center">View Orders</a>
+                <button class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 items-center justify-center transition whitespace-nowrap">Vendors</button>
             </div>
-        </header>
+        </div>
 
         <!-- Page Content -->
         <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-10 mt-8 flex flex-col">
