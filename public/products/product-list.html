@@ -120,7 +120,7 @@
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <a href="#" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+            <a href="../categories.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
                 <img src="../../assets/icons/admin/categories.svg" alt="Categories" class="w-6 h-6 shrink-0">
                 <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Categories</span>
             </a>
@@ -194,41 +194,49 @@
     <main class="flex-1 flex flex-col min-w-0 pb-[100px] relative">
 
         <!-- Header Container -->
-        <header class="w-full px-4 sm:px-6 lg:px-8 xl:px-10 pt-6 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4">
-
-            <!-- Left Section: Title + Search -->
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 w-full xl:w-auto xl:flex-1">
-                
-                <div class="flex items-center gap-4 w-full md:w-auto">
-                    <!-- Mobile Hamburger -->
-                    <button id="open-sidebar" class="xl:hidden p-2 -ml-2 text-gray-600 hover:text-black shrink-0">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                    <h1 class="font-['Roboto'] text-[26px] leading-[30px] md:pr-4 text-black shrink-0">Master Admin</h1>
-                </div>
+        <header
+            class="w-full px-4 sm:px-6 lg:px-8 xl:px-10 pt-6 xl:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-4 w-full md:w-auto flex-1">
+                <!-- Mobile Hamburger -->
+                <button id="open-sidebar" class="xl:hidden p-2 -ml-2 text-gray-600 hover:text-black shrink-0">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <h1 class="font-['Roboto'] text-[24px] sm:text-[26px] leading-[30px] text-black shrink-0">Master Admin
+                </h1>
 
                 <!-- Search Bar -->
-                <div class="flex items-center bg-white border border-[#656565]/70 rounded-[7px] w-full max-w-full md:max-w-[532px] md:w-[532px] h-[43px] px-3 shrink-0">
-                    <img src="../../assets/icons/admin/search.svg" alt="Search" class="w-5 h-5 mr-3 opacity-60 shrink-0">
+                <div
+                    class="hidden sm:flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full max-w-[400px] xl:w-[532px] h-[43px] px-3 ml-2 md:ml-6 shrink">
+                    <img src="../../assets/icons/admin/search.svg" alt="Search" class="w-5 h-5 mr-2 opacity-60">
                     <input type="text" placeholder="Search orders, products, customers....."
-                        class="w-full outline-none text-[#656565] font-['Poppins'] text-[15px] bg-transparent">
+                        class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] sm:text-[15px] bg-transparent">
                 </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="flex items-center justify-between gap-2 sm:gap-[10px] w-full xl:w-auto shrink-0 mt-2 xl:mt-0">
+            <!-- Mobile Search (Visible only below SM) -->
+            <div
+                class="sm:hidden flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full h-[43px] px-3 shrink">
+                <img src="../../assets/icons/admin/search.svg" alt="Search" class="w-5 h-5 mr-2 opacity-60">
+                <input type="text" placeholder="Search orders, products, customers....."
+                    class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] bg-transparent">
+            </div>
+
+            <div
+                class="flex items-center gap-3 self-end md:self-auto flex-wrap w-full md:w-auto mt-2 md:mt-0 justify-between md:justify-end">
                 <a href="add-product.html"
-                    class="bg-[#BE2229] text-white font-['Poppins'] font-medium text-[13px] sm:text-[15px] h-[38px] sm:h-[43px] flex-1 xl:flex-none px-1 sm:px-[10px] xl:min-w-[129px] rounded-[7px] flex items-center justify-center transition whitespace-nowrap">
+                    class="bg-[#BE2229] hover:bg-red-800 text-white font-['Poppins'] font-medium text-[14px] sm:text-[15px] h-[43px] px-4 rounded-[7px] flex items-center justify-center transition whitespace-nowrap">
                     + Add Product
                 </a>
                 <button
-                    class="flex bg-transparent border-[2px] border-[#BE2229] text-[#BE2229] font-['Poppins'] font-medium text-[13px] sm:text-[15px] h-[38px] sm:h-[43px] flex-1 xl:flex-none px-1 sm:px-[10px] xl:min-w-[132px] rounded-[7px] items-center justify-center transition whitespace-nowrap">
+                    class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[14px] sm:text-[15px] h-[43px] px-4 rounded-[7px] items-center justify-center transition whitespace-nowrap">
                     View Orders
                 </button>
                 <button
-                    class="flex bg-transparent border-[2px] border-[#BE2229] text-[#BE2229] font-['Poppins'] font-medium text-[13px] sm:text-[15px] h-[38px] sm:h-[43px] flex-1 xl:flex-none px-1 sm:px-[10px] xl:min-w-[112px] rounded-[7px] items-center justify-center transition whitespace-nowrap">
+                    class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[14px] sm:text-[15px] h-[43px] px-4 rounded-[7px] items-center justify-center transition whitespace-nowrap">
                     Vendors
                 </button>
             </div>
@@ -239,12 +247,12 @@
 
             <!-- Title & Back Button -->
             <div class="flex items-center gap-3 mb-6">
-                <button class="w-[40px] h-[40px] flex items-center justify-center bg-white rounded-[5px] shrink-0 border border-transparent shadow-sm">
+                <a href="../dashboard.html" class="w-[40px] h-[40px] flex items-center justify-center bg-white rounded-[5px] shrink-0 border border-transparent shadow-sm hover:bg-gray-50 transition">
                     <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
-                </button>
-                <h2 class="font-['Poppins'] font-medium text-[21px] leading-[32px] text-black">Add a New Product</h2>
+                </a>
+                <h2 class="font-['Poppins'] font-medium text-[21px] leading-[32px] text-black">Product List</h2>
             </div>
 
             <!-- 4 Stats Cards -->
@@ -396,7 +404,7 @@
                                         <div class="grid grid-cols-[50px_90px_minmax(150px,1fr)_120px_140px_70px_90px_100px_80px_90px_110px] w-full min-w-[1100px] h-[87px] bg-[#F6F6F6] border border-[#DADADA] rounded-[5px] items-center px-2">
                                             <!-- Checkbox -->
                                             <div class="flex items-center justify-center w-full">
-                                                <div class="w-[21px] h-[21px] bg-white border border-[#9A9A9A] rounded-[3px]"></div>
+                                                <input type="checkbox" class="w-[21px] h-[21px] min-w-[21px] border-[#9A9A9A] rounded-[3px] accent-[#BE2229] cursor-pointer" />
                                             </div>
                                             <!-- Image -->
                                             <div class="flex items-center justify-center w-full">
@@ -444,7 +452,7 @@
                                 <div class="bg-white rounded-[10px] box-shadow-card p-4 flex flex-col gap-4 border border-[#DADADA]">
                                     <div class="flex items-center justify-between border-b pb-3 border-[#E5E5E5]">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-[21px] h-[21px] bg-white border border-[#9A9A9A] rounded-[3px]"></div>
+                                            <input type="checkbox" class="w-[21px] h-[21px] min-w-[21px] border-[#9A9A9A] rounded-[3px] accent-[#BE2229] cursor-pointer" />
                                             <div class="font-['Roboto'] font-medium text-[18px] text-black">96575KH-AW</div>
                                         </div>
                                         <div class="px-[10px] py-[5px] bg-[#DBFFDE] rounded-[100px] font-['Roboto'] font-medium text-[13px] text-[#2F4D04]">Active</div>
