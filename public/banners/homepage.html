@@ -19,12 +19,11 @@
 
     <style>
         body { font-family: 'Roboto', sans-serif; background-color: #F2F2F2; }
-        .sidebar-item { transition: all 0.3s ease; cursor: pointer; }
-        .sidebar-item.active { background-color: #FFD9D9; border-radius: 10px; }
+        .sidebar-item { transition: all 0.3s ease; }
+        .sidebar-item.active { background-color: #FFD9D9; border-radius: 5px; }
         .sidebar-item.active span { color: #BE2229; font-weight: 500; }
-        .sidebar-item.active img { filter: invert(18%) sepia(85%) saturate(3015%) hue-rotate(342deg) brightness(88%) contrast(96%); }
-        .sidebar-item:hover { background-color: #f8f8f8; border-radius: 10px; }
-        .sidebar-item.active:hover { background-color: #FFC0C0; }
+        .sidebar-item.active img { filter: invert(21%) sepia(85%) saturate(3015%) hue-rotate(342deg) brightness(88%) contrast(96%); }
+        .sidebar-item:hover:not(.active) { background-color: #f8f8f8; border-radius: 5px; }
         .submenu-item { transition: all 0.2s ease; border-radius: 5px; }
         .submenu-item:hover { background-color: #f8f8f8; color: #BE2229; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -70,7 +69,6 @@
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <!-- Products Dropdown -->
             <div class="w-full flex flex-col group relative">
                 <button id="products-menu-btn" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full justify-between focus:outline-none cursor-pointer">
                     <div class="flex items-center gap-[15px]">
@@ -112,23 +110,23 @@
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <!-- Banners Dropdown (Active) -->
+            <!-- Banners Dropdown -->
             <div class="w-full flex flex-col group relative">
                 <button id="banners-menu-btn" class="sidebar-item active flex items-center px-[10px] py-[10px] gap-[15px] w-full justify-between focus:outline-none cursor-pointer">
                     <div class="flex items-center gap-[15px]">
-                        <img src="../../assets/icons/admin/banners.svg" alt="Banners" class="w-6 h-6 shrink-0">
+                        <img src="../../assets/icons/admin/banners.svg" alt="Banners" class="w-6 h-6 shrink-0" style="filter: invert(21%) sepia(85%) saturate(3015%) hue-rotate(342deg) brightness(88%) contrast(96%);">
                         <span class="font-['Poppins'] text-[19px] leading-[28px] group-hover:text-[#BE2229]">Banners</span>
                     </div>
-                    <svg id="banners-menu-chevron" class="w-5 h-5 text-black transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg id="banners-menu-chevron" class="w-5 h-5 text-black transition-transform duration-300 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-                <div id="banners-submenu" class="flex flex-col pl-[49px] py-3 gap-2 transition-all duration-300 origin-top relative">
-                    <div class="absolute left-[31px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
+                <div id="banners-submenu" class="flex flex-col pl-[60px] py-3 gap-3 transition-all duration-300 origin-top relative">
+                    <div class="absolute left-[22px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
                     <a href="homepage.html" class="font-['Poppins'] text-[18px] text-[#BE2229] leading-[27px] hover:text-[#BE2229] transition-colors">Homepage</a>
-                    <a href="category.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Category</a>
-                    <a href="promotional.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Promotional</a>
-                    <a href="advertisement.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Advertisement</a>
-                    <a href="section.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Section</a>
-                    <a href="informational.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Informational</a>
+                    <a href="category.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Category</a>
+                    <a href="promotional.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Promotional</a>
+                    <a href="advertisement.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Advertisement</a>
+                    <a href="section.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Section</a>
+                    <a href="informational.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Informational</a>
                 </div>
             </div>
             <div class="w-full h-[1px] bg-black/15"></div>
@@ -588,31 +586,18 @@
         if(closeSidebarBtn) closeSidebarBtn.addEventListener('click', toggleSidebar);
         if(sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
 
-        // Sidebar Sub-menu toggles with Hover-to-Open for Desktop
+        // Sidebar Sub-menu toggles
         function setupDropdown(btnId, submenuId, chevronId) {
             const btn = document.getElementById(btnId);
             const submenu = document.getElementById(submenuId);
             const chevron = document.getElementById(chevronId);
-            const parent = btn?.parentElement;
-            if (btn && submenu && chevron && parent) {
-                // Click to toggle
+            if (btn && submenu && chevron) {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    submenu.classList.toggle('hidden');
-                    chevron.classList.toggle('rotate-180');
-                });
-
-                // Desktop hover effect
-                parent.addEventListener('mouseenter', () => {
-                    if (window.innerWidth >= 768) {
-                        submenu.classList.remove('hidden');
-                        chevron.classList.add('rotate-180');
-                    }
-                });
-                parent.addEventListener('mouseleave', () => {
-                    if (window.innerWidth >= 768) {
-                        submenu.classList.add('hidden');
-                        chevron.classList.remove('rotate-180');
+                    if (submenu.classList.contains('hidden')) {
+                        submenu.classList.remove('hidden'); submenu.classList.add('flex'); chevron.classList.add('rotate-180');
+                    } else {
+                        submenu.classList.add('hidden'); submenu.classList.remove('flex'); chevron.classList.remove('rotate-180');
                     }
                 });
             }
@@ -622,5 +607,4 @@
         setupDropdown('banners-menu-btn', 'banners-submenu', 'banners-menu-chevron');
     </script>
 </body>
-
 </html>
