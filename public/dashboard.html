@@ -19,10 +19,12 @@
 
     <style>
         body { font-family: 'Roboto', sans-serif; background-color: #F2F2F2; }
-        .sidebar-item { transition: all 0.3s ease; }
-        .sidebar-item.active { background-color: #FFD9D9; border-radius: 5px; }
+        .sidebar-item { transition: all 0.3s ease; cursor: pointer; }
+        .sidebar-item.active { background-color: #FFD9D9; border-radius: 10px; }
         .sidebar-item.active span { color: #BE2229; font-weight: 500; }
-        .sidebar-item:hover:not(.active) { background-color: #f8f8f8; border-radius: 5px; }
+        .sidebar-item.active img { filter: invert(18%) sepia(85%) saturate(3015%) hue-rotate(342deg) brightness(88%) contrast(96%); }
+        .sidebar-item:hover { background-color: #f8f8f8; border-radius: 10px; }
+        .sidebar-item.active:hover { background-color: #FFC0C0; }
 
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -60,15 +62,15 @@
                 <button id="products-menu-btn" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full justify-between focus:outline-none cursor-pointer">
                     <div class="flex items-center gap-[15px]">
                         <img src="../assets/icons/admin/products.svg" alt="Products" class="w-6 h-6 shrink-0">
-                        <span class="font-['Poppins'] text-[19px] leading-[28px] text-black font-medium group-hover:text-[#BE2229]">Products</span>
+                        <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Products</span>
                     </div>
                     <svg id="products-menu-chevron" class="w-5 h-5 text-black transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-                <div id="products-submenu" class="hidden md:group-hover:flex flex-col pl-[60px] py-3 gap-3 transition-all duration-300 origin-top relative">
-                    <div class="absolute left-[22px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
-                    <a href="products/product-list.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Product List</a>
-                    <a href="products/add-product.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Add a Product</a>
-                    <a href="#" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Bulk Upload</a>
+                <div id="products-submenu" class="hidden flex-col pl-[49px] py-3 gap-2 transition-all duration-300 origin-top relative">
+                    <div class="absolute left-[31px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
+                    <a href="products/product-list.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Product List</a>
+                    <a href="products/add-product.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Add a Product</a>
+                    <a href="#" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Bulk Upload</a>
                 </div>
             </div>
             <div class="w-full h-[1px] bg-black/15"></div>
@@ -97,10 +99,25 @@
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <a href="banners.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
-                <img src="../assets/icons/admin/banners.svg" alt="Banners" class="w-6 h-6 shrink-0">
-                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Banners</span>
-            </a>
+            <!-- Banners Dropdown -->
+            <div class="w-full flex flex-col group relative">
+                <button id="banners-menu-btn" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full justify-between focus:outline-none cursor-pointer">
+                    <div class="flex items-center gap-[15px]">
+                        <img src="../assets/icons/admin/banners.svg" alt="Banners" class="w-6 h-6 shrink-0">
+                        <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Banners</span>
+                    </div>
+                    <svg id="banners-menu-chevron" class="w-5 h-5 text-black transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="banners-submenu" class="hidden flex-col pl-[49px] py-3 gap-2 transition-all duration-300 origin-top relative">
+                    <div class="absolute left-[31px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
+                    <a href="banners/homepage.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Homepage</a>
+                    <a href="banners/category.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Category</a>
+                    <a href="banners/promotional.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Promotional</a>
+                    <a href="banners/advertisement.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Advertisement</a>
+                    <a href="banners/section.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Section</a>
+                    <a href="banners/informational.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px] transition-colors">Informational</a>
+                </div>
+            </div>
             <div class="w-full h-[1px] bg-black/15"></div>
 
             <a href="settings.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
@@ -110,8 +127,7 @@
         </nav>
     </aside>
 
-    <main class="flex-1 flex flex-col min-w-0 pb-[100px] relative">
-    <main class="flex-1 flex flex-col min-w-0 pb-[100px] relative">
+    <main class="flex-1 flex-col min-w-0 pb-[100px] relative">
         <!-- Persistent Top Bar (Mobile Sticky / Desktop Single Row) -->
         <div class="sticky top-0 z-30 bg-[#F2F2F2] md:static md:bg-transparent w-full px-4 sm:px-6 lg:px-8 xl:px-10 h-[70px] md:h-auto md:pt-6 xl:pt-8 flex items-center justify-between transition-all">
             <div class="flex items-center gap-4 flex-1">
@@ -135,7 +151,7 @@
             </div>
         </div>
 
-        <!-- Mobile Scrollable Section (Visible only on mobile below md) -->
+        <!-- Mobile Action Buttons Section -->
         <div class="md:hidden px-4 sm:px-6 flex flex-col gap-4 mt-2">
             <!-- Mobile Search -->
             <div class="sm:hidden flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full h-[43px] px-3 shrink">
@@ -143,11 +159,11 @@
                 <input type="text" placeholder="Search orders, products, customers....." class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] bg-transparent">
             </div>
 
-            <!-- Mobile Action Buttons -->
-            <div class="flex items-center gap-3 justify-between">
-                <a href="products/add-product.html" class="bg-[#BE2229] hover:bg-red-800 text-white hover:text-white font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 flex items-center justify-center transition whitespace-nowrap">+ Add Product</a>
-                <a href="oders.html" class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 items-center justify-center transition whitespace-nowrap text-center">View Orders</a>
-                <button class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 items-center justify-center transition whitespace-nowrap">Vendors</button>
+            <!-- Mobile Action Buttons (Grid for better spacing) -->
+            <div class="grid grid-cols-2 xs:grid-cols-3 gap-3">
+                <a href="products/add-product.html" class="bg-[#BE2229] hover:bg-red-800 text-white font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex items-center justify-center transition whitespace-nowrap">+ Add Product</a>
+                <a href="oders.html" class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] items-center justify-center transition whitespace-nowrap text-center">View Orders</a>
+                <button class="xs:col-span-1 col-span-2 flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] items-center justify-center transition whitespace-nowrap">Vendors</button>
             </div>
         </div>
 
@@ -288,22 +304,44 @@
         const closeBtn = document.getElementById('close-sidebar');
 
         function toggleSidebar() { sidebar.classList.toggle('-translate-x-full'); overlay.classList.toggle('hidden'); }
-        openBtn.addEventListener('click', toggleSidebar);
-        closeBtn.addEventListener('click', toggleSidebar);
-        overlay.addEventListener('click', toggleSidebar);
+        if (openBtn) openBtn.addEventListener('click', toggleSidebar);
+        if (closeBtn) closeBtn.addEventListener('click', toggleSidebar);
+        if (overlay) overlay.addEventListener('click', toggleSidebar);
 
-        const productsMenuBtn = document.getElementById('products-menu-btn');
-        const productsSubmenu = document.getElementById('products-submenu');
-        const productsChevron = document.getElementById('products-menu-chevron');
+        function setupDropdown(btnId, submenuId, chevronId) {
+            const btn = document.getElementById(btnId);
+            const submenu = document.getElementById(submenuId);
+            const chevron = document.getElementById(chevronId);
+            const parent = btn?.parentElement;
+            if (btn && submenu && chevron && parent) {
+                // Click to toggle (mobile/touch)
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    submenu.classList.toggle('hidden');
+                    submenu.classList.toggle('flex');
+                    chevron.classList.toggle('rotate-180');
+                });
 
-        productsMenuBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (productsSubmenu.classList.contains('hidden')) {
-                productsSubmenu.classList.remove('hidden'); productsSubmenu.classList.add('flex'); productsChevron.classList.add('rotate-180');
-            } else {
-                productsSubmenu.classList.add('hidden'); productsSubmenu.classList.remove('flex'); productsChevron.classList.remove('rotate-180');
+                // Desktop hover effect
+                parent.addEventListener('mouseenter', () => {
+                    if (window.innerWidth >= 768) {
+                        submenu.classList.remove('hidden');
+                        submenu.classList.add('flex');
+                        chevron.classList.add('rotate-180');
+                    }
+                });
+                parent.addEventListener('mouseleave', () => {
+                    if (window.innerWidth >= 768) {
+                        submenu.classList.add('hidden');
+                        submenu.classList.remove('flex');
+                        chevron.classList.remove('rotate-180');
+                    }
+                });
             }
-        });
+        }
+
+        setupDropdown('products-menu-btn', 'products-submenu', 'products-menu-chevron');
+        setupDropdown('banners-menu-btn', 'banners-submenu', 'banners-menu-chevron');
     </script>
 </body>
 </html>

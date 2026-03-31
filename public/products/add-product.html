@@ -150,10 +150,25 @@
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <a href="../banners.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
-                <img src="../../assets/icons/admin/banners.svg" alt="Banners" class="w-6 h-6 shrink-0">
-                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Banners</span>
-            </a>
+            <!-- Banners Dropdown -->
+            <div class="w-full flex flex-col group relative">
+                <button id="banners-menu-btn" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full justify-between focus:outline-none cursor-pointer">
+                    <div class="flex items-center gap-[15px]">
+                        <img src="../../assets/icons/admin/banners.svg" alt="Banners" class="w-6 h-6 shrink-0">
+                        <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Banners</span>
+                    </div>
+                    <svg id="banners-menu-chevron" class="w-5 h-5 text-black transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="banners-submenu" class="hidden md:group-hover:flex flex-col pl-[60px] py-3 gap-3 transition-all duration-300 origin-top relative">
+                    <div class="absolute left-[22px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
+                    <a href="../banners/homepage.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Homepage</a>
+                    <a href="../banners/category.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Category</a>
+                    <a href="../banners/promotional.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Promotional</a>
+                    <a href="../banners/advertisement.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Advertisement</a>
+                    <a href="../banners/section.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Section</a>
+                    <a href="../banners/informational.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Informational</a>
+                </div>
+            </div>
             <div class="w-full h-[1px] bg-black/15"></div>
 
             <a href="../settings.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
@@ -793,15 +808,26 @@
             e.preventDefault();
             const isHidden = productsSubmenu.classList.contains('hidden');
             if (isHidden) {
-                productsSubmenu.classList.remove('hidden');
-                productsSubmenu.classList.add('flex');
-                productsChevron.classList.add('rotate-180');
+                productsSubmenu.classList.remove('hidden'); productsSubmenu.classList.add('flex'); productsChevron.classList.add('rotate-180');
             } else {
-                productsSubmenu.classList.add('hidden');
-                productsSubmenu.classList.remove('flex');
-                productsChevron.classList.remove('rotate-180');
+                productsSubmenu.classList.add('hidden'); productsSubmenu.classList.remove('flex'); productsChevron.classList.remove('rotate-180');
             }
         });
+
+        const bannersMenuBtn = document.getElementById('banners-menu-btn');
+        const bannersSubmenu = document.getElementById('banners-submenu');
+        const bannersChevron = document.getElementById('banners-menu-chevron');
+
+        if (bannersMenuBtn) {
+            bannersMenuBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (bannersSubmenu.classList.contains('hidden')) {
+                    bannersSubmenu.classList.remove('hidden'); bannersSubmenu.classList.add('flex'); bannersChevron.classList.add('rotate-180');
+                } else {
+                    bannersSubmenu.classList.add('hidden'); bannersSubmenu.classList.remove('flex'); bannersChevron.classList.remove('rotate-180');
+                }
+            });
+        }
 
         // --- Pricing Calculations ---
         const priceInput = document.getElementById('product-price');
