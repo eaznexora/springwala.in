@@ -45,29 +45,6 @@
             border-radius: 5px;
         }
 
-        /* Submenu Styling */
-        .submenu-item {
-            position: relative;
-        }
-
-        .submenu-item::before {
-            content: '';
-            position: absolute;
-            left: -15px;
-            top: 50%;
-            height: 1px;
-            width: 10px;
-            background-color: #A2A2A2;
-        }
-
-        .submenu-line {
-            position: absolute;
-            left: -15px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: #A2A2A2;
-        }
 
         /* Hide scrollbar for cleaner look in specific areas */
         .no-scrollbar::-webkit-scrollbar {
@@ -140,14 +117,14 @@
                 </button>
 
                 <!-- Submenu -->
-                <div id="products-submenu" class="flex flex-col pl-[60px] py-3 gap-3 relative transition-all duration-300 origin-top">
-                    <div class="submenu-line delay-200"></div>
+                <div id="products-submenu" class="flex flex-col pl-[60px] py-3 gap-3 transition-all duration-300 origin-top relative">
+                    <div class="absolute left-[22px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
                     <a href="product-list.html"
-                        class="submenu-item font-['Poppins'] text-[18px] text-[#BE2229] font-medium leading-[27px]">Product List</a>
+                        class="font-['Poppins'] text-[18px] text-[#BE2229] font-medium leading-[27px]">Product List</a>
                     <a href="add-product.html"
-                        class="submenu-item font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Add a Product</a>
+                        class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Add a Product</a>
                     <a href="#"
-                        class="submenu-item font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Bulk Upload</a>
+                        class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Bulk Upload</a>
                 </div>
             </div>
             <div class="w-full h-[1px] bg-black/15"></div>

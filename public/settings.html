@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Springwala Admin | Settings</title>
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #F2F2F2; }
+        .sidebar-item { transition: all 0.3s ease; }
+        .sidebar-item.active { background-color: #FFD9D9; border-radius: 10px; }
+        .sidebar-item.active span { color: #BE2229; font-weight: 500; }
+        .sidebar-item.active img { filter: invert(18%) sepia(85%) saturate(3015%) hue-rotate(342deg) brightness(88%) contrast(96%); }
+        .sidebar-item:hover:not(.active) { background-color: #f8f8f8; border-radius: 5px; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .box-shadow-card { box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+
+<body class="bg-[#F2F2F2] text-[#363636] min-h-screen flex text-[17px]">
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed md:sticky top-0 left-0 h-screen w-[257px] bg-white shadow-[2px_0px_5px_1px_rgba(0,0,0,0.1)] flex flex-col pt-7 z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out shrink-0 overflow-y-auto no-scrollbar">
+        <button id="close-sidebar" class="md:hidden absolute top-4 right-4 text-gray-500 hover:text-red-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <div class="px-11 mb-10 w-full flex justify-center">
+            <a href="dashboard.html"><img src="../assets/images/header.png" alt="Springwala Admin Logo" class="h-[40px] w-auto"></a>
+        </div>
+
+        <nav class="flex flex-col px-[34px] gap-[2px] w-full">
+            <a href="dashboard.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+                <img src="../assets/icons/admin/dashboard.svg" alt="Dashboard" class="w-6 h-6 shrink-0">
+                <span class="font-['Poppins'] text-[19px] leading-[28px] group-hover:text-[#BE2229]">Dashboard</span>
+            </a>
+            <div class="w-full h-[1px] bg-black/15"></div>
+
+            <a href="categories.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+                <img src="../assets/icons/admin/categories.svg" alt="Categories" class="w-6 h-6 shrink-0">
+                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Categories</span>
+            </a>
+            <div class="w-full h-[1px] bg-black/15"></div>
+
+            <div class="w-full flex flex-col group relative">
+                <button id="products-menu-btn" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full justify-between focus:outline-none cursor-pointer">
+                    <div class="flex items-center gap-[15px]">
+                        <img src="../assets/icons/admin/products.svg" alt="Products" class="w-6 h-6 shrink-0">
+                        <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Products</span>
+                    </div>
+                    <svg id="products-menu-chevron" class="w-5 h-5 text-black transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="products-submenu" class="hidden md:group-hover:flex flex-col pl-[60px] py-3 gap-3 transition-all duration-300 origin-top relative">
+                    <div class="absolute left-[22px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
+                    <a href="products/product-list.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Product List</a>
+                    <a href="products/add-product.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Add a Product</a>
+                    <a href="#" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Bulk Upload</a>
+                </div>
+            </div>
+            <div class="w-full h-[1px] bg-black/15"></div>
+
+            <a href="oders.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+                <img src="../assets/icons/admin/oders.svg" alt="Orders" class="w-6 h-6 shrink-0">
+                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Orders</span>
+            </a>
+            <div class="w-full h-[1px] bg-black/15"></div>
+
+            <a href="Users.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+                <img src="../assets/icons/admin/users.svg" alt="Users" class="w-6 h-6 shrink-0">
+                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Users</span>
+            </a>
+            <div class="w-full h-[1px] bg-black/15"></div>
+
+            <a href="inventory.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+                <img src="../assets/icons/admin/inventry.svg" alt="Inventory" class="w-6 h-6 shrink-0">
+                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Inventory</span>
+            </a>
+            <div class="w-full h-[1px] bg-black/15"></div>
+
+            <a href="analytics.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+                <img src="../assets/icons/admin/analytics.svg" alt="Analytics" class="w-6 h-6 shrink-0">
+                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Analytics</span>
+            </a>
+            <div class="w-full h-[1px] bg-black/15"></div>
+
+            <a href="banners.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+                <img src="../assets/icons/admin/banners.svg" alt="Banners" class="w-6 h-6 shrink-0">
+                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Banners</span>
+            </a>
+            <div class="w-full h-[1px] bg-black/15"></div>
+
+            <a href="settings.html" class="sidebar-item active flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+                <img src="../assets/icons/admin/settings.svg" alt="Settings" class="w-6 h-6 shrink-0">
+                <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col min-w-0 pb-[100px] relative">
+        <!-- Persistent Top Bar -->
+        <div class="sticky top-0 z-30 bg-[#F2F2F2] md:static md:bg-transparent w-full px-4 sm:px-6 lg:px-8 xl:px-10 h-[70px] md:h-auto md:pt-6 xl:pt-8 flex items-center justify-between">
+            <div class="flex items-center gap-4 flex-1">
+                <button id="open-sidebar" class="md:hidden p-2 -ml-2 text-gray-600 hover:text-black shrink-0">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <h2 class="font-['Roboto'] font-medium text-[24px] sm:text-[26px] leading-[30px] text-black shrink-0">Master Admin</h2>
+
+                <!-- Desktop Search -->
+                <div class="hidden sm:flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full max-w-[400px] xl:w-[532px] h-[43px] px-3 ml-6 shrink">
+                    <img src="../assets/icons/admin/search.svg" alt="Search" class="w-5 h-5 mr-2 opacity-60">
+                    <input type="text" placeholder="Search orders, products, customers....." class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] sm:text-[15px] bg-transparent">
+                </div>
+            </div>
+
+            <!-- Desktop Actions -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="products/add-product.html" class="bg-[#BE2229] hover:bg-red-800 text-white font-['Poppins'] font-medium text-[15px] h-[43px] px-4 rounded-[7px] flex items-center justify-center transition whitespace-nowrap">+ Add Product</a>
+                <a href="oders.html" class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[15px] h-[43px] px-4 rounded-[7px] items-center justify-center transition whitespace-nowrap">View Orders</a>
+                <button class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[15px] h-[43px] px-4 rounded-[7px] items-center justify-center transition whitespace-nowrap">Vendors</button>
+            </div>
+        </div>
+
+        <!-- Mobile Actions & Search (Visible only on mobile below md) -->
+        <div class="md:hidden px-4 sm:px-6 flex flex-col gap-4 mt-2 mb-2">
+            <!-- Mobile Search -->
+            <div class="sm:hidden flex items-center bg-white border border-[#656565]/60 rounded-[7px] w-full h-[43px] px-3 shrink">
+                <img src="../assets/icons/admin/search.svg" alt="Search" class="w-5 h-5 mr-2 opacity-60">
+                <input type="text" placeholder="Search orders, products, customers....." class="w-full outline-none text-[#656565] font-['Poppins'] font-light text-[14px] bg-transparent">
+            </div>
+
+            <!-- Mobile Action Buttons -->
+            <div class="flex items-center gap-3 justify-between">
+                <a href="products/add-product.html" class="bg-[#BE2229] hover:bg-red-800 text-white hover:text-white font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 flex items-center justify-center transition whitespace-nowrap">+ Add Product</a>
+                <a href="oders.html" class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 items-center justify-center transition whitespace-nowrap text-center">View Orders</a>
+                <button class="flex bg-transparent border-2 border-[#BE2229] text-[#BE2229] hover:bg-red-50 font-['Poppins'] font-medium text-[13px] h-[40px] px-2 rounded-[7px] flex-1 items-center justify-center transition whitespace-nowrap">Vendors</button>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="w-full px-4 sm:px-[24px] xl:px-8 mt-[35px]">
+            <!-- Breadcrumb / Title Row -->
+            <div class="flex items-center gap-4 mb-8">
+                <button onclick="history.back()" class="w-10 h-10 bg-white rounded-[5px] flex items-center justify-center shadow-sm hover:bg-gray-50 transition border border-[#E9E9E9]">
+                    <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <h1 class="font-['Poppins'] font-medium text-[21px] text-black">Settings</h1>
+            </div>
+
+            <!-- Settings Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1fr_1fr_300px] gap-6 items-start">
+                
+                <!-- General Information Block -->
+                <div class="bg-white rounded-[10px] p-6 border border-[#E9E9E9] flex flex-col h-full">
+                    <div class="flex items-center justify-between mb-6 pb-2 border-b border-black/10">
+                        <h2 class="font-['Poppins'] font-medium text-[20px] text-black">General Information</h2>
+                        <button class="hover:opacity-70 transition"><img src="../assets/icons/admin/refresh.svg" class="w-5 h-5 opacity-50"></button>
+                    </div>
+                    
+                    <div class="flex flex-col gap-5">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <label class="font-['Roboto'] font-medium text-[18px] text-black">Site Name</label>
+                                <span class="text-[#656565] font-['Roboto'] text-[14px]">Last Updated: 15/11/2025</span>
+                            </div>
+                            <input type="text" value="Springwala Composites" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[17px] text-[#656565] outline-none border-none">
+                        </div>
+                        
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <label class="font-['Roboto'] font-medium text-[18px] text-black">Contact Email</label>
+                                <span class="text-[#656565] font-['Roboto'] text-[14px]">Last Updated: 15/11/2025</span>
+                            </div>
+                            <input type="email" value="support@springwala.in" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[17px] text-[#656565] outline-none border-none">
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <label class="font-['Roboto'] font-medium text-[18px] text-black">Contact Number</label>
+                                <span class="text-[#656565] font-['Roboto'] text-[14px]">Last Updated: 15/11/2025</span>
+                            </div>
+                            <input type="text" value="+91 99675 89330" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[17px] text-[#656565] outline-none border-none">
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <label class="font-['Roboto'] font-medium text-[18px] text-black">Company Address</label>
+                                <span class="text-[#656565] font-['Roboto'] text-[14px]">Last Updated: 15/11/2025</span>
+                            </div>
+                            <textarea class="bg-[#EDEDED] rounded-[5px] min-h-[120px] p-4 font-['Roboto'] text-[17px] text-[#656565] outline-none border-none resize-none">Shop No. 2, Spring House, Road Name, Mumbai, Maharashtra 400001</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Settings Block -->
+                <div class="bg-white rounded-[10px] p-6 border border-[#E9E9E9] flex flex-col h-full">
+                    <div class="flex items-center justify-between mb-6 pb-2 border-b border-black/10">
+                        <h2 class="font-['Poppins'] font-medium text-[20px] text-black">SEO Settings</h2>
+                        <button class="hover:opacity-70 transition"><img src="../assets/icons/admin/refresh.svg" class="w-5 h-5 opacity-50"></button>
+                    </div>
+
+                    <div class="flex flex-col gap-5">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <label class="font-['Roboto'] font-medium text-[18px] text-black">Meta Title</label>
+                                <span class="text-[#656565] font-['Roboto'] text-[14px]">Last Updated: 15/11/2025</span>
+                            </div>
+                            <input type="text" value="Springwala Composites | High Quality Springs" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[17px] text-[#656565] outline-none border-none">
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <label class="font-['Roboto'] font-medium text-[18px] text-black">Meta Description</label>
+                                <span class="text-[#656565] font-['Roboto'] text-[14px]">Last Updated: 15/11/2025</span>
+                            </div>
+                            <textarea class="bg-[#EDEDED] rounded-[5px] min-h-[115px] p-4 font-['Roboto'] text-[17px] text-[#656565] outline-none border-none resize-none">Leading manufacturer of high-quality industrial springs and components in India. Custom solutions available.</textarea>
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <label class="font-['Roboto'] font-medium text-[18px] text-black">Meta Keywords</label>
+                                <span class="text-[#656565] font-['Roboto'] text-[14px]">Last Updated: 15/11/2025</span>
+                            </div>
+                            <textarea class="bg-[#EDEDED] rounded-[5px] min-h-[139px] p-4 font-['Roboto'] text-[17px] text-[#656565] outline-none border-none resize-none">springs, compression springs, extension springs, torsion springs, industrial springs mumbai</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branding Block -->
+                <div class="bg-white rounded-[10px] p-6 border border-[#E9E9E9] flex flex-col h-full">
+                    <div class="flex items-center justify-between mb-6 pb-2 border-b border-black/10">
+                        <h2 class="font-['Poppins'] font-medium text-[20px] text-black">Branding</h2>
+                        <button class="hover:opacity-70 transition"><img src="../assets/icons/admin/refresh.svg" class="w-5 h-5 opacity-50"></button>
+                    </div>
+
+                    <div class="flex flex-col gap-8 items-center">
+                        <!-- Logo Upload -->
+                        <div class="flex flex-col items-center gap-3 w-full">
+                            <h3 class="font-['Roboto'] font-medium text-[18px] text-black">Logo Upload</h3>
+                            <div class="relative w-[150px] h-[150px] bg-white border border-[#EDEDED] rounded-[5px] flex items-center justify-center overflow-hidden">
+                                <img src="../assets/images/header.png" alt="Logo" class="max-w-[80%] h-auto">
+                                <button class="absolute bottom-2 right-2 p-1.5 bg-white rounded-full shadow-md hover:bg-red-50 transition border border-red-100">
+                                    <img src="../assets/icons/admin/delete.svg" class="w-4 h-4">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Favicon Upload -->
+                        <div class="flex flex-col items-center gap-3 w-full">
+                            <h3 class="font-['Roboto'] font-medium text-[18px] text-black">Favicon</h3>
+                            <div class="relative w-[150px] h-[150px] bg-white border border-[#EDEDED] rounded-[5px] flex items-center justify-center overflow-hidden">
+                                <img src="../favicon.png" alt="Favicon" class="w-12 h-12">
+                                <button class="absolute bottom-2 right-2 p-1.5 bg-white rounded-full shadow-md hover:bg-red-50 transition border border-red-100">
+                                    <img src="../assets/icons/admin/delete.svg" class="w-4 h-4">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Settings (Full Width Wide Section) -->
+            <div class="bg-white rounded-[10px] p-6 border border-[#E9E9E9] mt-6">
+                <div class="flex items-center justify-between mb-6 pb-2 border-b border-black/10">
+                    <h2 class="font-['Poppins'] font-medium text-[20px] text-black">General Information</h2>
+                    <button class="hover:opacity-70 transition"><img src="../assets/icons/admin/refresh.svg" class="w-5 h-5 opacity-50"></button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <div class="flex flex-col gap-2 text-left">
+                        <div class="flex items-center justify-between">
+                            <label class="font-['Roboto'] font-medium text-[17px] text-black">Instagram</label>
+                            <span class="text-[#656565] font-['Roboto'] text-[13px]">Last Updated: 15/11/2025</span>
+                        </div>
+                        <input type="text" value="+91 99675 89330" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[16px] text-[#656565] outline-none">
+                    </div>
+                    
+                    <div class="flex flex-col gap-2 text-left">
+                        <div class="flex items-center justify-between">
+                            <label class="font-['Roboto'] font-medium text-[17px] text-black">Twitter (X)</label>
+                            <span class="text-[#656565] font-['Roboto'] text-[13px]">Last Updated: 15/11/2025</span>
+                        </div>
+                        <input type="text" value="+91 99675 89330" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[16px] text-[#656565] outline-none">
+                    </div>
+
+                    <div class="flex flex-col gap-2 text-left">
+                        <div class="flex items-center justify-between">
+                            <label class="font-['Roboto'] font-medium text-[17px] text-black">Whatsapp</label>
+                            <span class="text-[#656565] font-['Roboto'] text-[13px]">Last Updated: 15/11/2025</span>
+                        </div>
+                        <input type="text" value="+91 99675 89330" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[16px] text-[#656565] outline-none">
+                    </div>
+
+                    <div class="flex flex-col gap-2 text-left">
+                        <div class="flex items-center justify-between">
+                            <label class="font-['Roboto'] font-medium text-[17px] text-black">Facebook</label>
+                            <span class="text-[#656565] font-['Roboto'] text-[13px]">Last Updated: 15/11/2025</span>
+                        </div>
+                        <input type="text" value="+91 99675 89330" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[16px] text-[#656565] outline-none">
+                    </div>
+
+                    <div class="flex flex-col gap-2 text-left">
+                        <div class="flex items-center justify-between">
+                            <label class="font-['Roboto'] font-medium text-[17px] text-black">LinkedIn</label>
+                            <span class="text-[#656565] font-['Roboto'] text-[13px]">Last Updated: 15/11/2025</span>
+                        </div>
+                        <input type="text" value="+91 99675 89330" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[16px] text-[#656565] outline-none">
+                    </div>
+
+                    <div class="flex flex-col gap-2 text-left">
+                        <div class="flex items-center justify-between">
+                            <label class="font-['Roboto'] font-medium text-[17px] text-black">Contact Number</label>
+                            <span class="text-[#656565] font-['Roboto'] text-[13px]">Last Updated: 15/11/2025</span>
+                        </div>
+                        <input type="text" value="+91 99675 89330" class="bg-[#EDEDED] rounded-[5px] h-[40px] px-4 font-['Roboto'] text-[16px] text-[#656565] outline-none">
+                    </div>
+                </div>
+            </div>
+            <!-- Save Changes Button -->
+            <div class="flex justify-end mt-8">
+                <button class="bg-[#BE2229] hover:bg-red-800 text-white font-['Poppins'] font-medium text-[16px] h-[45px] px-10 rounded-[7px] transition shadow-md">
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const openBtn = document.getElementById('open-sidebar');
+        const closeBtn = document.getElementById('close-sidebar');
+
+        function toggleSidebar() { 
+            sidebar.classList.toggle('-translate-x-full'); 
+            overlay.classList.toggle('hidden'); 
+        }
+        
+        openBtn.addEventListener('click', toggleSidebar);
+        closeBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        const productsMenuBtn = document.getElementById('products-menu-btn');
+        const productsSubmenu = document.getElementById('products-submenu');
+        const productsChevron = document.getElementById('products-menu-chevron');
+
+        productsMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isHidden = productsSubmenu.classList.contains('hidden');
+            if (isHidden) {
+                productsSubmenu.classList.remove('hidden');
+                productsSubmenu.classList.add('flex');
+                productsChevron.classList.add('rotate-180');
+            } else {
+                productsSubmenu.classList.add('hidden');
+                productsSubmenu.classList.remove('flex');
+                productsChevron.classList.remove('rotate-180');
+            }
+        });
+    </script>
+</body>
+</html>

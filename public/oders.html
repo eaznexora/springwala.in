@@ -45,29 +45,6 @@
             border-radius: 5px;
         }
 
-        /* Submenu Styling */
-        .submenu-item {
-            position: relative;
-        }
-
-        .submenu-item::before {
-            content: '';
-            position: absolute;
-            left: -15px;
-            top: 50%;
-            height: 1px;
-            width: 10px;
-            background-color: #A2A2A2;
-        }
-
-        .submenu-line {
-            position: absolute;
-            left: -15px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: #A2A2A2;
-        }
 
         /* Hide scrollbar for cleaner look in specific areas */
         .no-scrollbar::-webkit-scrollbar {
@@ -154,11 +131,11 @@
                     </div>
                     <svg id="products-menu-chevron" class="w-5 h-5 text-black transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-                <div id="products-submenu" class="hidden md:group-hover:flex flex-col pl-[60px] py-3 gap-3 relative transition-all duration-300 origin-top">
-                    <div class="submenu-line delay-200"></div>
-                    <a href="products/product-list.html" class="submenu-item font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Product List</a>
-                    <a href="products/add-product.html" class="submenu-item font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Add a Product</a>
-                    <a href="#" class="submenu-item font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Bulk Upload</a>
+                <div id="products-submenu" class="hidden md:group-hover:flex flex-col pl-[60px] py-3 gap-3 transition-all duration-300 origin-top relative">
+                    <div class="absolute left-[22px] top-0 bottom-0 w-[1px] bg-[#A2A2A2]"></div>
+                    <a href="products/product-list.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Product List</a>
+                    <a href="products/add-product.html" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Add a Product</a>
+                    <a href="#" class="font-['Poppins'] text-[18px] text-black hover:text-[#BE2229] leading-[27px]">Bulk Upload</a>
                 </div>
             </div>
             <div class="w-full h-[1px] bg-black/15"></div>
@@ -175,25 +152,25 @@
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <a href="#" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+            <a href="inventory.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
                 <img src="../assets/icons/admin/inventry.svg" alt="Inventory" class="w-6 h-6 shrink-0">
                 <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Inventory</span>
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <a href="#" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+            <a href="analytics.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
                 <img src="../assets/icons/admin/analytics.svg" alt="Analytics" class="w-6 h-6 shrink-0">
                 <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Analytics</span>
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <a href="#" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+            <a href="banners.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
                 <img src="../assets/icons/admin/banners.svg" alt="Banners" class="w-6 h-6 shrink-0">
                 <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Banners</span>
             </a>
             <div class="w-full h-[1px] bg-black/15"></div>
 
-            <a href="#" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
+            <a href="settings.html" class="sidebar-item flex items-center px-[10px] py-[10px] gap-[15px] w-full group">
                 <img src="../assets/icons/admin/settings.svg" alt="Settings" class="w-6 h-6 shrink-0">
                 <span class="font-['Poppins'] text-[19px] leading-[28px] text-black group-hover:text-[#BE2229]">Settings</span>
             </a>
